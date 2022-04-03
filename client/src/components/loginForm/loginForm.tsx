@@ -1,9 +1,13 @@
 import React from "react";
 import './loginForm.css';
+import {Link, NavLink} from 'react-router-dom';
+
+
 
 
 export function LoginForm() {
 
+      
 return (
   <div>
   <div className="sidenav">
@@ -25,7 +29,7 @@ return (
                      <input type="password" className="form-control" placeholder="Password"></input>
                   </div>
                   <button type="submit" className="btn btn-black">Login</button>
-                  <button type="submit" className="btn btn-secondary">Register</button>
+                  <button type="submit" className="btn btn-secondary">Register<Link to ='/signup'></Link></button>
                </form>
             </div>
          </div>

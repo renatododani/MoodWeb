@@ -4,10 +4,22 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
+import { LoginForm } from './components/loginForm/loginForm';
+import { SignUpForm } from './components/signupForm/signupForm';
+
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <App />
+      <Routes>
+        <Route path='/login' element={<LoginForm />}></Route>
+        <Route path= '/signup' element={<SignUpForm />}></Route>
+        <Route path='*' element={<Navigate to='/login' />} />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
