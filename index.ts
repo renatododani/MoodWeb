@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import pg from 'pg-promise';
-import { signupRoutes } from './routes/signupRoute';
+import { signupRoutes } from './routes/auth-routes/signupRoute';
 
 const app = express();
 
