@@ -81,3 +81,8 @@ body {
       margin-top: 10px;
       margin-right: 5px;
   }
+
+  .link-color{
+    color: white;
+    text-decoration: none;
+  }

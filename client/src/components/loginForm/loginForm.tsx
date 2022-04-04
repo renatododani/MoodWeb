@@ -29,7 +29,7 @@ return (
                      <input type="password" className="form-control" placeholder="Password"></input>
                   </div>
                   <button type="submit" className="btn btn-black">Login</button>
-                  <button type="submit" className="btn btn-secondary">Register<Link to ='/signup'></Link></button>
+                  <button type="submit" className="btn btn-secondary"><Link className='link-color' to='/signup' >Sign Up</Link></button>
                </form>
             </div>
          </div>
