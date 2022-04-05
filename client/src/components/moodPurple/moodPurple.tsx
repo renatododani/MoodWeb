@@ -23,6 +23,6 @@ export function PurpleMood() {
 
         <img className="img-size" src="The-Notebook.jpeg"></img>
       </ul>
-    </div>
+      </div>
   );
 }
