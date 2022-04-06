@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { MusicPlayer } from '../musicplayer/musicplayer'
 
 export function PurpleMood() {
   return (
@@ -23,6 +24,7 @@ export function PurpleMood() {
 
         <img className="img-size" src="The-Notebook.jpeg"></img>
       </ul>
+      <MusicPlayer></MusicPlayer>
       </div>
   );
 }
