@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { MusicPlayer } from '../musicplayer/musicplayer'
+import { MusicPlayer } from "../musicplayer/musicplayer";
 
 export function PurpleMood() {
   return (
