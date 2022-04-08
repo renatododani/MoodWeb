@@ -28,10 +28,12 @@ export function MusicPlayer() {
         document.body.appendChild(script);
 
         (window as any).onSpotifyWebPlaybackSDKReady = () => {
+
+            const {REACT_APP_SPOTIFY_API_KEY} = process.env;
     
             const player = new (window as any).Spotify.Player({
                 name: 'Web Playback SDK',
-                getOAuthToken: (cb:any) => { cb('BQBrnLHadOnLGLiwdBx00-ZfOQUBOG30k3YMiYdhY5gzmqakhRBtJpXquOF5cRRiBzI9sM0pqO-iGD-zP8ZEkgZomzYyZ6GdjgubKLqkmzUSCg4zLmnDHEwQSHAlx7P4Av-LPltyzf1RkTqQOhY-NKvI9IEsYFJuDvMESn1e-S5cW3AZ7vRxfoXzssM0VE5d'); },
+                getOAuthToken: (cb:any) => { cb(REACT_APP_SPOTIFY_API_KEY) },
                 volume: 0.5
             });
     
