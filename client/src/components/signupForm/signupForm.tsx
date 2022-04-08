@@ -1,9 +1,16 @@
 import React from "react";
 import './signupForm.css';
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 
 export function SignUpForm() {
+
+function userSignup() {
+
+   return axios.post(`http://localhost:3050/signup`)
+   .then(response => response.data);
+}
 
 return (
   <div>
@@ -33,7 +40,7 @@ return (
                      <label>Password</label>
                      <input type="password" className="form-control" placeholder="Password"></input>
                   </div>
-                  <button type="submit" className="btn btn-black">Register</button>
+                  <button type="submit" className="btn btn-black" onClick={() => userSignup()}>Register</button>
      
                   <button type="submit" className="btn btn-secondary"><Link className='link-color' to='/login'>Already a Member?</Link></button>
                </form>

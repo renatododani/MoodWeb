@@ -1,13 +1,19 @@
 import React from "react";
 import './loginForm.css';
 import {Link, NavLink} from 'react-router-dom';
+import axios from "axios";
 
 
 
 
 export function LoginForm() {
 
-      
+function userLogin() {
+
+   return axios.get(`http://localhost:3050/login`)
+   .then(response => response.data);
+}   
+
 return (
   <div>
   <div className="sidenav">
@@ -28,7 +34,7 @@ return (
                      <label>Password</label>
                      <input type="password" className="form-control" placeholder="Password"></input>
                   </div>
-                  <button type="submit" className="btn btn-black">Login</button>
+                  <button type="submit" className="btn btn-black" onClick={() => userLogin()}>Login</button>
                   <button type="submit" className="btn btn-secondary"><Link className='link-color' to='/signup' >Sign Up</Link></button>
                </form>
             </div>
