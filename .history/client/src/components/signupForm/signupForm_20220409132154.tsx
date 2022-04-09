@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import './signupForm.css';
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -8,20 +8,14 @@ import { useState } from "react";
 export function SignUpForm() {
 
 function userSignup() {
-      return axios.post(`/signup`, {
-         first_name: firstName,
-         last_name: lastName,
-         email: email,
-         password: password
-      })
-      .then((response) => {
-         console.log(response, response.data)
-         return response.data
-      }).catch(e => {
-         console.log(`Error `, e)
-      });
-   }
-    
+   return axios.post(`/signup`)
+   .then((response) => {
+      console.log(response.data)
+      return response.data;
+   }).catch(e => {
+      console.log(`Error `, e)
+   });
+} 
 
    const [firstName, setFirstName] = useState('');
       function setFirstNameValue(e: any){

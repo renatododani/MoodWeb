@@ -14,10 +14,10 @@ function userSignup() {
          email: email,
          password: password
       })
-      .then((response) => {
-         console.log(response, response.data)
-         return response.data
-      }).catch(e => {
+      .then(response =>
+         // console.log(response, response.data)
+         response.data
+      ).catch(e => {
          console.log(`Error `, e)
       });
    }

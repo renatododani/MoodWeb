@@ -7,21 +7,19 @@ import { useState } from "react";
 
 export function SignUpForm() {
 
-function userSignup() {
-      return axios.post(`/signup`, {
-         first_name: firstName,
-         last_name: lastName,
-         email: email,
-         password: password
-      })
+// function userSignup() {
+
+   useEffect(() => {
+      axios.post(`/signup`)
       .then((response) => {
          console.log(response, response.data)
-         return response.data
+         return response.data;
       }).catch(e => {
          console.log(`Error `, e)
       });
-   }
-    
+   }, [])
+   
+// } 
 
    const [firstName, setFirstName] = useState('');
       function setFirstNameValue(e: any){

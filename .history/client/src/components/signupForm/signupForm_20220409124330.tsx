@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import './signupForm.css';
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -8,37 +8,26 @@ import { useState } from "react";
 export function SignUpForm() {
 
 function userSignup() {
-      return axios.post(`/signup`, {
-         first_name: firstName,
-         last_name: lastName,
-         email: email,
-         password: password
-      })
-      .then((response) => {
-         console.log(response, response.data)
-         return response.data
-      }).catch(e => {
-         console.log(`Error `, e)
-      });
-   }
-    
+   return axios.post(`/signup`)
+   .then(response => 
+      console.log(response.data));
+}
 
    const [firstName, setFirstName] = useState('');
-      function setFirstNameValue(e: any){
-         setFirstName(e.target.value);
-         console.log(firstName, e.target.value)
+      function setFirstNameValue(firstName:string){
+         setFirstName(firstName);
       }
    const [lastName, setLastName] = useState('');
-   function setLastNameValue(e: any){
-      setLastName(e.target.value);
+   function setLastNameValue(lastName:string){
+      setLastName(lastName);
    }
    const [email, setEmail] = useState('');
-   function setEmailValue(e: any){
-      setEmail(e.target.value);
+   function setEmailValue(email:string){
+      setEmail(email);
    }
    const [password, setPassword] = useState('');
-   function setPasswordValue(e: any){
-      setPassword(e.target.value);
+   function setPasswordValue(password:string){
+      setPassword(password);
    }
 
 return (
@@ -55,21 +44,21 @@ return (
                <form>
                   <div className="form-group">
                      <label>First Name</label>
-                     <input name="firstName" type="firstName" className="form-control" placeholder="First Name" onChange={setFirstNameValue}></input>
+                     <input type="firstName" className="form-control" placeholder="First Name" onChange={() => setFirstNameValue(firstName)}></input>
                   </div>
                   <div className="form-group">
                      <label>Last Name</label>
-                     <input type="lastName" className="form-control" placeholder="Last Name" onChange={setLastNameValue}></input>
+                     <input type="lastName" className="form-control" placeholder="Last Name" onChange={() => setLastNameValue(lastName)}></input>
                   </div>
                   <div className="form-group">
                      <label>Email</label>
-                     <input type="email" className="form-control" placeholder="Email" onChange={setEmailValue}></input>
+                     <input type="email" className="form-control" placeholder="Email" onChange={() => setEmailValue(email)}></input>
                   </div>
                   <div className="form-group">
                      <label>Password</label>
-                     <input type="password" className="form-control" placeholder="Password" onChange={setPasswordValue}></input>
+                     <input type="password" className="form-control" placeholder="Password" onChange={() => setPasswordValue(firstName)}></input>
                   </div>
-                  <button type="submit" className="btn btn-black" onClick={userSignup}>Register</button>
+                  <button type="submit" className="btn btn-black" onClick={() => userSignup()}>Register</button>
      
                   <button type="submit" className="btn btn-secondary"><Link className='link-color' to='/login'>Already a Member?</Link></button>
                </form>

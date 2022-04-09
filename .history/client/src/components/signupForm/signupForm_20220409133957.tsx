@@ -12,12 +12,12 @@ function userSignup() {
          first_name: firstName,
          last_name: lastName,
          email: email,
-         password: password
+         password: Hash
       })
-      .then((response) => {
-         console.log(response, response.data)
-         return response.data
-      }).catch(e => {
+      .then(response =>
+         // console.log(response, response.data)
+         response.data
+      ).catch(e => {
          console.log(`Error `, e)
       });
    }
