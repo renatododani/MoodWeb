@@ -31,8 +31,7 @@ ReactDOM.render(
         <Route path="/green" element={<GreenMood />}></Route>
         <Route path="/blue" element={<BlueMood />}></Route>
         <Route path="/black" element={<BlackMood />}></Route>
-
-        <Route path="*" element={<Navigate to="/home" />} />
+        <Route path="*" element={<Navigate to="/login" />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
