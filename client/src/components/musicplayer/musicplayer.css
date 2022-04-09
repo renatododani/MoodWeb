@@ -1,0 +1,15 @@
+.btn-spotify {
+  width: 70px;
+  height: 40px;
+  background-color: black;
+  color: white;
+  border: none;
+}
+
+.play-btn-spotify {
+  width: 200px;
+  height: 40px;
+  background-color: black;
+  color: white;
+  border: none;
+}

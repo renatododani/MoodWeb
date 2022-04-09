@@ -1,108 +1,111 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from "react";
+import "./musicplayer.css";
 
 export function MusicPlayer() {
+  const track = {
+    name: "",
+    album: {
+      images: [{ url: "" }],
+    },
+    artists: [{ name: "" }],
+  };
 
-    const track = {
-        name: "",
-        album: {
-            images: [
-                { url: "" }
-            ]
+  const [player, setPlayer] = useState<any>(undefined);
+  const [is_paused, setPaused] = useState(false);
+  const [is_active, setActive] = useState(false);
+  const [current_track, setTrack] = useState(track);
+
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://sdk.scdn.co/spotify-player.js";
+    script.async = true;
+
+    document.body.appendChild(script);
+
+    (window as any).onSpotifyWebPlaybackSDKReady = () => {
+      const { REACT_APP_SPOTIFY_API_KEY } = process.env;
+
+      const player = new (window as any).Spotify.Player({
+        name: "Web Playback SDK",
+        getOAuthToken: (cb: any) => {
+          cb(REACT_APP_SPOTIFY_API_KEY);
         },
-        artists: [
-            { name: "" }
-        ]
-    }
+        volume: 0.5,
+      });
 
-    const [player, setPlayer] = useState<any>(undefined);
-    const [is_paused, setPaused] = useState(false);
-    const [is_active, setActive] = useState(false);
-    const [current_track, setTrack] = useState(track);
+      setPlayer(player);
 
-    useEffect(() => {
+      player.addListener("ready", (result: { device_id: any }) => {
+        console.log("Ready with Device ID", result.device_id);
+      });
 
-        const script = document.createElement("script");
-        script.src = "https://sdk.scdn.co/spotify-player.js";
-        script.async = true;
-    
-        document.body.appendChild(script);
+      player.addListener("not_ready", (result: { device_id: any }) => {
+        console.log("Device ID has gone offline", result.device_id);
+      });
 
-        (window as any).onSpotifyWebPlaybackSDKReady = () => {
+      player.addListener("player_state_changed", (state: any) => {
+        if (!state) {
+          return;
+        }
 
-            const {REACT_APP_SPOTIFY_API_KEY} = process.env;
-    
-            const player = new (window as any).Spotify.Player({
-                name: 'Web Playback SDK',
-                getOAuthToken: (cb:any) => { cb(REACT_APP_SPOTIFY_API_KEY) },
-                volume: 0.5
-            });
-    
-            setPlayer(player);
-    
-            player.addListener('ready', (result: { device_id:any }) => {
-                console.log('Ready with Device ID', result.device_id);
-            });
-    
-            player.addListener('not_ready', (result: { device_id:any }) => {
-                console.log('Device ID has gone offline', result.device_id);
-            });
+        setTrack(state.track_window.current_track);
+        setPaused(state.paused);
 
-            player.addListener('player_state_changed', ( (state:any) => {
+        player.getCurrentState().then((state: any) => {
+          !state ? setActive(false) : setActive(true);
+        });
+      });
 
-                if (!state) {
-                    return;
-                }
-            
-                setTrack(state.track_window.current_track);
-                setPaused(state.paused);
-            
-            
-                player.getCurrentState().then( (state:any) => { 
-                    (!state)? setActive(false) : setActive(true) 
-                });
-            
-            }));
-    
-    
-            player.connect();
-    
-        };
-    }, []);
+      player.connect();
+    };
+  }, []);
 
-    return(
-        <div>
-            
-            <div className="container">
-                <div className="main-wrapper">
-                    <img 
-                        src={current_track.album.images[0].url} 
-                        className="now-playing__cover" alt="" />
+  return (
+    <div>
+      <div className="container">
+        <div className="main-wrapper">
+          <img
+            src={current_track.album.images[0].url}
+            className="now-playing__cover"
+            alt=""
+          />
 
-                            <div className="now-playing__side">
-                                <div className="now-playing__name">{
-                                            current_track.name
-                                            }</div>
+          <div className="now-playing__side">
+            <div className="now-playing__name">{current_track.name}</div>
 
-                                <div className="now-playing__artist">{
-                                            current_track.artists[0].name
-                                            }</div>
-                            </div>
-                            
-                    </div>
+            <div className="now-playing__artist">
+              {current_track.artists[0].name}
             </div>
-
-            <button className="btn-spotify" onClick={() => { player.previousTrack() }} >
-                &lt;&lt;
-            </button>
-
-            <button className="btn-spotify" onClick={() => { player.togglePlay() }} >
-                {is_paused ? "PLAY" : "PAUSE" }
-            </button>
-
-            <button className="btn-spotify" onClick={() => { player.nextTrack() }} >
-                &gt;&gt;
-            </button>
-
+          </div>
         </div>
-    )
+      </div>
+
+      <button
+        className="btn-spotify"
+        onClick={() => {
+          player.previousTrack();
+        }}
+      >
+        &lt;&lt;
+      </button>
+
+      <button
+        className="play-btn-spotify"
+        onClick={() => {
+          player.togglePlay();
+        }}
+      >
+        {is_paused ? "PLAY" : "PAUSE"}
+      </button>
+
+      <button
+        className="btn-spotify"
+        onClick={() => {
+          player.nextTrack();
+        }}
+      >
+        &gt;&gt;
+      </button>
+    </div>
+  );
 }

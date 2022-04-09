@@ -5,8 +5,8 @@ import { MusicPlayer } from "../musicplayer/musicplayer";
 export function PurpleMood() {
   return (
     <div>
-      <h1>Romance, Love, Passion</h1>
-      <ul>
+      <h1 className="header">Romance, Love, Passion</h1>
+      <ul className="quotes">
         <li>
           "Lots of people want to ride with you in the limo, but what you want
           is someone who will take the bus with you when the limo breaks down.”
@@ -14,17 +14,62 @@ export function PurpleMood() {
         </li>
       </ul>
 
-      <ul>
-        <li>Meet Me in Paradise by Libby Hubscher (2021)</li>
-        <img src="MeetMe.jpeg"></img>
-      </ul>
-
-      <ul>
-        <li>The Notebook (2004)</li>
-
-        <img className="img-size" src="The-Notebook.jpeg"></img>
-      </ul>
-      <MusicPlayer></MusicPlayer>
+      <div className="books-container">
+        <img className="book-img" src="MeetMe.jpeg"></img>
+        <div className="name-description">
+          <li className="book-name">Meet Me in Paradise</li>
+          <p>By Libby Hubscher</p>
+          <p className="book-description">
+            Marin's still grieving her mother's passing, so an island spa trip
+            with her sister seems like the perfect remedy. When her sister
+            misses the flight, she finds herself flying solo. Marin embarks on
+            an adventure in paradise in a journey filled with unexpected love
+            and self-discovery.
+          </p>
+        </div>
       </div>
+
+      <div className="books-container">
+        <img className="book-img" src="purple2.jpg"></img>
+        <div className="name-description">
+          <li className="book-name">Seven Days in June</li>
+          <p>By Tia Williams</p>
+          <p className="book-description">
+            Eva Mercy writes best-selling vampire books, but she's an exhausted
+            single mom with no time to “romance a real-life penis.” She channels
+            desire into her novels. But then she sees Shane at a conference. He
+            stole her heart during a wild week 15 years ago, and now the two
+            give it another round. Get ready for laugh-out-loud writing in one
+            of the best new steamy romance novels, which also has an engrossing
+            story with a true heart.
+          </p>
+        </div>
+      </div>
+
+      <div className="books-container">
+        <img className="book-img" src="purple3.jpg"></img>
+        <div className="name-description">
+          <li className="book-name">The Right Swipe</li>
+          <p>By Alisha Rai</p>
+          <p className="book-description">
+            Meet Rhiannon, the creator of a hot dating app who tries to follow
+            her own rules for hooking up. She's ghosted by a hottie, but when he
+            reemerges asking for a second chance, she has to revise her own
+            rules. Readers love Alisha Rai's latest novel for its modern,
+            multicultural romance filled with wit and fire.
+          </p>
+        </div>
+      </div>
+
+      <div className="movies-container">
+        <img className="img-size" src="purple2movie.jpg"></img>
+        <img className="img-size" src="purple3movie.jpg"></img>
+        <img className="img-size" src="purple4movie.jpg"></img>
+        <img className="img-size" src="purple5movie.jpg"></img>
+        <img className="img-size" src="The-Notebook.jpeg"></img>
+        <img className="img-size" src="purple1movie.jpg"></img>
+      </div>
+      <MusicPlayer></MusicPlayer>
+    </div>
   );
 }

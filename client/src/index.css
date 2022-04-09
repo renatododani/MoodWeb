@@ -14,10 +14,45 @@ code {
 
 .img-size {
   max-width: 183px;
+  margin-right: 20px;
 }
 
+.header {
+  margin: 20px;
+}
 
+.quotes {
+  list-style: none;
+  font-size: 25px;
+}
 
+/* Books */
+
+.books-container {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 30px;
+  border-bottom: solid lightgrey 1px;
+}
+
+.book-img {
+  max-width: 130px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.book-name {
+  font-size: 25px;
+}
+
+/* movies */
+
+.movies-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 30px;
+}
 
 /* MEDIA PLAYER */
 
