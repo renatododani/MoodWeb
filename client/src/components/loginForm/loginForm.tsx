@@ -1,44 +1,56 @@
-import React from "react";
+import React, {useState} from "react";
 import './loginForm.css';
 import {Link, NavLink} from 'react-router-dom';
 import axios from "axios";
 
-
-
-
 export function LoginForm() {
 
-function userLogin() {
+   const [email, setEmail] = useState('');
+   const [password, setPassword] = useState('');
 
-   return axios.get(`http://localhost:3050/login`)
-   .then(response => response.data);
-}   
+   function validateForm() {
+      return email.length > 0 && password.length > 0;
+   }
 
-return (
-  <div>
-  <div className="sidenav">
-         <div className="login-main-text">
-            <h2>MoodWeb</h2>
-            <p>Login or register from here to access.</p>
+   function userLogin() {
+
+      return axios.post(`/login`, {
+         email: email,
+         password: password
+      })
+      .then((response) => {
+         console.log(response, response.data, 'login successful')
+         return response.data
+      }).catch(e => {
+         console.log(`Error `, e)
+      });
+   }   
+
+   return (
+   <div>
+   <div className="sidenav">
+      <div className="login-main-text">
+         <h2>MoodWeb</h2>
+         <p>Login or register from here to access.</p>
+      </div>
+   </div>
+   <div className="main">
+      <div className="col-md-6 col-sm-12">
+         <div className="login-form">
+            <form>
+               <div className="form-group">
+                  <label>Email</label>
+                  <input type="text" className="form-control" placeholder="Email" onChange={(e) => setEmail(e.target.value)}></input>
+               </div>
+               <div className="form-group">
+                  <label>Password</label>
+                  <input type="password" className="form-control" placeholder="Password" onChange={(e) => setPassword(e.target.value)}></input>
+               </div>
+               <button type="submit" className="btn btn-black" onClick={() => userLogin()} disabled={!validateForm()}>Login</button>
+               <button type="submit" className="btn btn-secondary"><Link className='link-color' to='/signup' >Sign Up</Link></button>
+            </form>
          </div>
       </div>
-      <div className="main">
-         <div className="col-md-6 col-sm-12">
-            <div className="login-form">
-               <form>
-                  <div className="form-group">
-                     <label>Email</label>
-                     <input type="text" className="form-control" placeholder="Email"></input>
-                  </div>
-                  <div className="form-group">
-                     <label>Password</label>
-                     <input type="password" className="form-control" placeholder="Password"></input>
-                  </div>
-                  <button type="submit" className="btn btn-black" onClick={() => userLogin()}>Login</button>
-                  <button type="submit" className="btn btn-secondary"><Link className='link-color' to='/signup' >Sign Up</Link></button>
-               </form>
-            </div>
-         </div>
-      </div>
-      </div>
+   </div>
+   </div>
 )}
