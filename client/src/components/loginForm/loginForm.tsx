@@ -12,6 +12,10 @@ export function LoginForm() {
       return email.length > 0 && password.length > 0;
    }
 
+   function handleSubmit(event:any) {
+      event.preventDefault();
+   }
+
    function userLogin() {
 
       return axios.post(`/login`, {
@@ -37,7 +41,7 @@ export function LoginForm() {
    <div className="main">
       <div className="col-md-6 col-sm-12">
          <div className="login-form">
-            <form>
+            <form onSubmit={(e) => handleSubmit}>
                <div className="form-group">
                   <label>Email</label>
                   <input type="text" className="form-control" placeholder="Email" onChange={(e) => setEmail(e.target.value)}></input>
