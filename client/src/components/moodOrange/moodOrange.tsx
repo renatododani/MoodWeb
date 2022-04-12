@@ -9,9 +9,8 @@ export function OrangeMood() {
       <h1 className='header'>Annoyed, Frustrated</h1>
       <ul className="quotes">
         <li>
-          "Lots of people want to ride with you in the limo, but what you want
-          is someone who will take the bus with you when the limo breaks down.”
-          -Oprah Winfrey
+        "When you think you have to figure out everything all at once. Breath. You’re Strong. You got this. Take it day by day"
+          -Karen Salmansohn
         </li>
       </ul>
       <div className="books-container">

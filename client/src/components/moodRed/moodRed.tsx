@@ -9,9 +9,8 @@ export function RedMood() {
       <h1 className='header'>Anger, Frustration, Passion</h1>
       <ul className="quotes">
         <li>
-          "Lots of people want to ride with you in the limo, but what you want
-          is someone who will take the bus with you when the limo breaks down.”
-          -Oprah Winfrey
+        "Fear is the path to the dark side. Fear leads to anger. Anger leads to hate. Hate leads to suffering"
+          -Yoda
         </li>
       </ul>
 

@@ -9,9 +9,8 @@ export function BlackMood() {
       <h1 className='header'>Drained, Overworked</h1>
       <ul className="quotes">
         <li>
-          "Lots of people want to ride with you in the limo, but what you want
-          is someone who will take the bus with you when the limo breaks down.”
-          -Oprah Winfrey
+        "When the going get tough, the tough get going"
+          -Joseph P. Kennedy Sr.
         </li>
       </ul>
       <div className="books-container">
