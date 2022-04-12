@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { MusicPlayer } from "../musicplayer/musicplayer";
+import '../moodPurple/moodPurple.css'
 
 export function PurpleMood() {
   return (
-    <div>
+    <div className='moodPurple'>
       <h1 className="header">Romance, Love, Passion</h1>
       <ul className="quotes">
         <li>

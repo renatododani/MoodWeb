@@ -1,9 +1,11 @@
 import React, {useState} from "react";
 import './loginForm.css';
-import {Link, NavLink} from 'react-router-dom';
+import {Link, NavLink, useNavigate} from 'react-router-dom';
 import axios from "axios";
 
 export function LoginForm() {
+
+   let navigate:any = useNavigate();
 
    const [email, setEmail] = useState('');
    const [password, setPassword] = useState('');
@@ -25,7 +27,9 @@ export function LoginForm() {
       .then((response) => {
          console.log(response, response.data, 'login successful')
          return response.data
-      }).catch(e => {
+      })
+      .then(navigate('/home'))
+      .catch(e => {
          console.log(`Error `, e)
       });
    }   

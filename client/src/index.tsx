@@ -9,7 +9,7 @@ import { LoginForm } from "./components/loginForm/loginForm";
 import { SignUpForm } from "./components/signupForm/signupForm";
 import { MoodHome } from "./components/moodHome/moodHome";
 import { PurpleMood } from "./components/moodPurple/moodPurple";
-import { RedMood } from "./components/moodRed/moodPurple";
+import { RedMood } from "./components/moodRed/moodRed";
 import { OrangeMood } from "./components/moodOrange/moodOrange";
 import { YellowMood } from "./components/moodYellow/moodYellow";
 import { GreenMood } from "./components/moodGreen/moodGreen";

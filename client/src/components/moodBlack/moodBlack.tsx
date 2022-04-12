@@ -1,29 +1,60 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { MusicPlayer } from "../musicplayer/musicplayer";
+import '../moodBlack/moodBlack.css'
 
 export function BlackMood() {
   return (
-    <div>
-      <h1>Drained, Overworked</h1>
-      <ul>
+    <div className='moodBlack'>
+      <h1 className='header'>Drained, Overworked</h1>
+      <ul className="quotes">
         <li>
           "Lots of people want to ride with you in the limo, but what you want
           is someone who will take the bus with you when the limo breaks down.”
           -Oprah Winfrey
         </li>
       </ul>
+      <div className="books-container">
+        <img className="book-img" src="black1.webp"></img>
+        <div className="name-description">
+          <li className="book-name">Essentialism</li>
+          <p>By Greg McKeown</p>
+          <p className="book-description">
+          Essentialism is not one more thing—it’s a whole new way of doing everything. It’s about doing less, but better, in every area of our lives. Essentialism is a movement whose time has come. By forcing us to apply more selective criteria for what is Essential, the disciplined pursuit of less empowers us to reclaim control of our own choices about where to spend our precious time and energy—instead of giving others the implicit permission to choose for us.
+          </p>
+        </div>
+      </div>
 
-      <ul>
-        <li>Meet Me in Paradise by Libby Hubscher (2021)</li>
-        <img src="MeetMe.jpeg"></img>
-      </ul>
+      <div className="books-container">
+        <img className="book-img" src=""></img>
+        <div className="name-description">
+          <li className="book-name"></li>
+          <p></p>
+          <p className="book-description">
 
-      <ul>
-        <li>The Notebook (2004)</li>
+          </p>
+        </div>
+      </div>
 
-        <img className="img-size" src="The-Notebook.jpeg"></img>
-      </ul>
+      <div className="books-container">
+        <img className="book-img" src=""></img>
+        <div className="name-description">
+          <li className="book-name"></li>
+          <p></p>
+          <p className="book-description">
+
+          </p>
+        </div>
+      </div>
+
+      <div className="movies-container">
+        <img className="img-size" src="black1movie.jpg"></img>
+        <img className="img-size" src="black2movie.jpg"></img>
+        <img className="img-size" src="black3movie.jpg"></img>
+        <img className="img-size" src=""></img>
+        <img className="img-size" src=""></img>
+        <img className="img-size" src=""></img>
+      </div>
       <MusicPlayer></MusicPlayer>
     </div>
   );
