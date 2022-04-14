@@ -33,8 +33,8 @@ export const db = pg()({
     host: 'localhost',
     port: 5432,
     user: 'postgres',
-    password: 'mlmlml',
-    database: 'MoodWeb'
+    password: process.env.DATABASE_PASSWORD,
+    database: process.env.DATABASE_NAME
 });
 
 
