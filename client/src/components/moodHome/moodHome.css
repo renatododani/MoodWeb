@@ -3,12 +3,23 @@
   padding: 0;
   box-sizing: border-box;
 }
+.moodHome {
+  background: slateblue;
+  height: 100vh;
+}
+.header{
+  font-family: 'Pacifico', cursive;
+  color: white;
+}
 section {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: #121212;
+}
+a{
+  color: white;
+  text-decoration: none;
 }
 .bowl {
   position: relative;
@@ -48,9 +59,7 @@ section {
   transform: translateX(-50%);
   width: 40%;
   height: 30px;
-  border: 15px solid #444;
   border-radius: 50%;
-  box-shadow: 0 10px #222;
 }
 .bowl::after {
   content: "";
@@ -63,7 +72,7 @@ section {
   height: 80px;
   background: rgba(255, 255, 255, 0.05);
 }
-.liquid {
+/* .liquid {
   position: absolute;
   top: 50%;
   left: 5px;
@@ -73,6 +82,119 @@ section {
   border-bottom-left-radius: 150px;
   border-bottom-right-radius: 150px;
   filter: drop-shadow(0 0 10px #41c1fb);
+  transform-origin: top center;
+  animation: animateLiquid 10s linear infinite;
+} */
+
+.liquid-purple {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  background: purple;
+  border-bottom-left-radius: 150px;
+  border-bottom-right-radius: 150px;
+  filter: drop-shadow(0 0 10px purple);
+  transform-origin: top center;
+  animation: animateLiquid 10s linear infinite;
+}
+.liquid-orange{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  background: orangered;
+  border-bottom-left-radius: 150px;
+  border-bottom-right-radius: 150px;
+  filter: drop-shadow(0 0 10px orangered);
+  transform-origin: top center;
+  animation: animateLiquid 10s linear infinite;
+}
+.liquid-blue{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  background: rgb(11, 11, 141);
+  border-bottom-left-radius: 150px;
+  border-bottom-right-radius: 150px;
+  filter: drop-shadow(0 0 10px rgb(11, 11, 141));
+  transform-origin: top center;
+  animation: animateLiquid 10s linear infinite;
+}
+.liquid-yellow{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  background: rgb(198, 198, 49);
+  border-bottom-left-radius: 150px;
+  border-bottom-right-radius: 150px;
+  filter: drop-shadow(0 0 10px rgb(198, 198, 49));
+  transform-origin: top center;
+  animation: animateLiquid 10s linear infinite;
+}
+.liquid-red{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  background: rgb(180, 36, 36);
+  border-bottom-left-radius: 150px;
+  border-bottom-right-radius: 150px;
+  filter: drop-shadow(0 0 10px rgb(180, 36, 36));
+  transform-origin: top center;
+  animation: animateLiquid 10s linear infinite;
+}
+.liquid-green{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  background: rgb(63, 160, 63);
+  border-bottom-left-radius: 150px;
+  border-bottom-right-radius: 150px;
+  filter: drop-shadow(0 0 10px rgb(63, 160, 63));
+  transform-origin: top center;
+  animation: animateLiquid 10s linear infinite;
+}
+.liquid-black{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  background: rgb(20, 19, 19);
+  border-bottom-left-radius: 150px;
+  border-bottom-right-radius: 150px;
+  filter: drop-shadow(0 0 10px rgb(20, 19, 19));
   transform-origin: top center;
   animation: animateLiquid 10s linear infinite;
 }
@@ -93,7 +215,7 @@ section {
     transform: rotate(0deg);
   }
 }
-.liquid::before {
+/* .liquid::before {
   content: "";
   position: absolute;
   top: -10px;
@@ -102,6 +224,76 @@ section {
   background: #1fa4e0;
   border-radius: 50%;
   filter: drop-shadow(0 0 30px #41c1fb);
+} */
+.liquid-purple::before{
+  content: "";
+  position: absolute;
+  top: -10px;
+  width: 100%;
+  height: 20px;
+  background: purple;
+  border-radius: 50%;
+  filter: drop-shadow(0 0 30px #41c1fb);
+}
+.liquid-orange::before{
+  content: "";
+  position: absolute;
+  top: -10px;
+  width: 100%;
+  height: 20px;
+  background: orangered;
+  border-radius: 50%;
+  filter: drop-shadow(0 0 30px orange);
+}
+.liquid-blue::before{
+  content: "";
+  position: absolute;
+  top: -10px;
+  width: 100%;
+  height: 20px;
+  background: blue;
+  border-radius: 50%;
+  filter: drop-shadow(0 0 30px blue);
+}
+.liquid-yellow::before{
+  content: "";
+  position: absolute;
+  top: -10px;
+  width: 100%;
+  height: 20px;
+  background: yellow;
+  border-radius: 50%;
+  filter: drop-shadow(0 0 30px yellow);
+}
+.liquid-red::before{
+  content: "";
+  position: absolute;
+  top: -10px;
+  width: 100%;
+  height: 20px;
+  background: red;
+  border-radius: 50%;
+  filter: drop-shadow(0 0 30px red);
+}
+.liquid-green::before{
+  content: "";
+  position: absolute;
+  top: -10px;
+  width: 100%;
+  height: 20px;
+  background: green;
+  border-radius: 50%;
+  filter: drop-shadow(0 0 30px green);
+}
+.liquid-black::before{
+  content: "";
+  position: absolute;
+  top: -10px;
+  width: 100%;
+  height: 20px;
+  background: black;
+  border-radius: 50%;
+  filter: drop-shadow(0 0 30px black);
 }
 .shadow {
   position: absolute;

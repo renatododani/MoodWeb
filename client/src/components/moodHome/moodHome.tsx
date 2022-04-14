@@ -5,17 +5,19 @@ import "../moodHome/moodHome.css";
 export function MoodHome() {
   const [user, setUser] = useState("User");
   return (
-    <div>
-      <div></div>
+    <div className='moodHome'>
+      <h1 className='header'>
+        Hello, User
+      </h1>
       <section>
         <div className="bowl-row">
           <div className="bowl">
-            <div className="liquid purple">
+            <div className="liquid-purple">
               <Link to="/purple">Purple</Link>
             </div>
           </div>
           <div className="bowl">
-            <div className="liquid red">
+            <div className="liquid-red">
               <Link to="/red">Red</Link>
             </div>
           </div>
@@ -23,17 +25,17 @@ export function MoodHome() {
 
         <div className="bowl-row">
           <div className="bowl">
-            <div className="liquid orange">
+            <div className="liquid-orange">
               <Link to="/orange">Orange</Link>
             </div>
           </div>
           <div className="bowl">
-            <div className="liquid yellow">
+            <div className="liquid-yellow">
               <Link to="/yellow">Yellow</Link>
             </div>
           </div>
           <div className="bowl">
-            <div className="liquid green">
+            <div className="liquid-green">
               <Link to="/green">Green</Link>
             </div>
           </div>
@@ -41,12 +43,12 @@ export function MoodHome() {
 
         <div className="bowl-row">
           <div className="bowl">
-            <div className="liquid blue">
+            <div className="liquid-blue">
               <Link to="/blue">Blue</Link>
             </div>
           </div>
           <div className="bowl">
-            <div className="liquid black">
+            <div className="liquid-black">
               <Link to="/black">Black</Link>
             </div>
           </div>

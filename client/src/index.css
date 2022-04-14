@@ -13,13 +13,13 @@ code {
 }
 
 .img-size {
-  max-width: 183px;
+  max-width: 165px;
   margin-right: 20px;
 }
 
-.header {
+/* .header {
   margin: 20px;
-}
+} */
 
 .quotes {
   list-style: none;
@@ -32,14 +32,14 @@ code {
   display: flex;
   align-items: center;
   list-style: none;
-  margin: 30px;
+  margin: 15px;
   border-bottom: solid lightgrey 1px;
 }
 
 .book-img {
   max-width: 130px;
   margin-right: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .book-name {
@@ -51,7 +51,6 @@ code {
 .movies-container {
   display: flex;
   justify-content: space-around;
-  margin: 30px;
 }
 
 /* MEDIA PLAYER */
