@@ -16,12 +16,11 @@ export function OrangeMood() {
   return (
     <div className='moodOrange'>
       <h1 className='header'>Annoyed, Frustrated</h1>
-      <ul className="quotes">
-        <li>
-        "When you think you have to figure out everything all at once. Breath. You’re Strong. You got this. Take it day by day"
-          -Karen Salmansohn
-        </li>
-      </ul>
+      <div className="quotes">
+       {quote?.quote}
+       <div></div>
+       -{quote?.author}
+      </div>
       <div className="books-container">
         <img className="book-img" src="orange1.jpg"></img>
         <div className="name-description">
