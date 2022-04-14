@@ -19,8 +19,8 @@ export const db = pg()({
   host: "localhost",
   port: 5432,
   user: "postgres",
-  password: "2cshbkukdd",
-  database: "moodwebDB",
+  password: process.env.DATABASE_PASSWORD,
+  database: process.env.DATABASE_NAME,
 });
 
 app.listen(port, () =>
