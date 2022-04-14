@@ -9,9 +9,8 @@ export function GreenMood() {
       <h1 className='header'>Happy, Content</h1>
       <ul className="quotes">
         <li>
-          "Lots of people want to ride with you in the limo, but what you want
-          is someone who will take the bus with you when the limo breaks down.”
-          -Oprah Winfrey
+        "Today you are you! That is truer than true! There is no one alive who is you-er than you"
+          -Dr. Seuss
         </li>
       </ul>
 

@@ -9,9 +9,8 @@ export function YellowMood() {
       <h1 className="header">Bored, Nervous, Anxious</h1>
       <ul className="quotes">
         <li>
-          "Lots of people want to ride with you in the limo, but what you want
-          is someone who will take the bus with you when the limo breaks down.”
-          -Oprah Winfrey
+        "You can't control things by being nervous about it"
+          -Tina Fey
         </li>
       </ul>
 

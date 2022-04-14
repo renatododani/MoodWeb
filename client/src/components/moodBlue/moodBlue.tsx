@@ -9,9 +9,8 @@ export function BlueMood() {
       <h1 className='header'>Tranquil, Calm, Relaxed</h1>
       <ul className="quotes">
         <li>
-          "Lots of people want to ride with you in the limo, but what you want
-          is someone who will take the bus with you when the limo breaks down.”
-          -Oprah Winfrey
+        "Do not let the behavior of others destroy your inner peace."
+          -Dalai Lama
         </li>
       </ul>
       <div className="books-container">
