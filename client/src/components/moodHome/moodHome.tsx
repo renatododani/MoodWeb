@@ -10,6 +10,24 @@ export function MoodHome() {
   function purpleButton() {
     navigate('/purple');
   }
+  function redButton() {
+    navigate('/red');
+  }
+  function blueButton() {
+    navigate('/blue');
+  }
+  function blackButton() {
+    navigate('/black');
+  }
+  function orangeButton() {
+    navigate('/orange');
+  }
+  function yellowButton() {
+    navigate('/yellow');
+  }
+  function greenButton() {
+    navigate('/green');
+  }
 
   const [user, setUser] = useState("User");
   return (
@@ -26,7 +44,7 @@ export function MoodHome() {
           </div>
           <div className="bowl">
             <div className="liquid-red">
-              <Link to="/red">Red</Link>
+            <button onClick={redButton}>Red</button>
             </div>
           </div>
         </div>
@@ -34,17 +52,17 @@ export function MoodHome() {
         <div className="bowl-row">
           <div className="bowl">
             <div className="liquid-orange">
-              <Link to="/orange">Orange</Link>
+            <button onClick={orangeButton}>Orange</button>
             </div>
           </div>
           <div className="bowl">
             <div className="liquid-yellow">
-              <Link to="/yellow">Yellow</Link>
+            <button onClick={yellowButton}>Yellow</button>
             </div>
           </div>
           <div className="bowl">
             <div className="liquid-green">
-              <Link to="/green">Green</Link>
+            <button onClick={greenButton}>Green</button>
             </div>
           </div>
         </div>
@@ -52,12 +70,12 @@ export function MoodHome() {
         <div className="bowl-row">
           <div className="bowl">
             <div className="liquid-blue">
-              <Link to="/blue">Blue</Link>
+            <button onClick={blueButton}>Blue</button>
             </div>
           </div>
           <div className="bowl">
             <div className="liquid-black">
-              <Link to="/black">Black</Link>
+            <button onClick={blackButton}>Black</button>
             </div>
           </div>
         </div>

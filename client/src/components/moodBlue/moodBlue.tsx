@@ -1,18 +1,24 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { MusicPlayer } from "../musicplayer/musicplayer";
 import '../moodBlue/moodBlue.css'
+import { getBlueQuote, Quote } from "../../service/getQuotes";
 
 export function BlueMood() {
+  const [quote, setQuote] = useState<Quote|undefined>(undefined);
+
+  useEffect(() => {
+    getBlueQuote().then(data => setQuote(data));
+    console.log(quote);
+  },[])
   return (
     <div className='moodBlue'>
       <h1 className='header'>Tranquil, Calm, Relaxed</h1>
-      <ul className="quotes">
-        <li>
-        "Do not let the behavior of others destroy your inner peace."
-          -Dalai Lama
-        </li>
-      </ul>
+      <div className="quotes">
+        {quote?.quote}
+        <div></div>
+        -{quote?.author}
+      </div>
       <div className="books-container">
         <img className="book-img" src="blue1.jpg"></img>
         <div className="name-description">

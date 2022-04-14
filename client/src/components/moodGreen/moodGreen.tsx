@@ -1,18 +1,24 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { MusicPlayer } from "../musicplayer/musicplayer";
 import '../moodGreen/moodGreen.css'
+import { getGreenQuote, Quote } from "../../service/getQuotes";
 
 export function GreenMood() {
+  const [quote, setQuote] = useState<Quote|undefined>(undefined);
+
+  useEffect(() => {
+    getGreenQuote().then(data => setQuote(data));
+    console.log(quote);
+  },[])
   return (
     <div className='moodGreen'>
       <h1 className='header'>Happy, Content</h1>
-      <ul className="quotes">
-        <li>
-        "Today you are you! That is truer than true! There is no one alive who is you-er than you"
-          -Dr. Seuss
-        </li>
-      </ul>
+      <div className="quotes">
+        {quote?.quote}
+        <div></div>
+        -{quote?.author}
+      </div>
 
       <div className="books-container">
         <img className="book-img" src="green1.jpg"></img>
