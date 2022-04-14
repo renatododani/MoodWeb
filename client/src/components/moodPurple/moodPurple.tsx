@@ -1,27 +1,25 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { MusicPlayer } from "../musicplayer/musicplayer";
-import '../moodPurple/moodPurple.css'
-import axios from 'axios';
+import "../moodPurple/moodPurple.css";
+import axios from "axios";
 import { getPurpleQuote } from "../../service/getQuotes";
 import { Quote } from "../../service/getQuotes";
 
 export function PurpleMood() {
-
-  const [quote, setQuote] = useState<Quote|undefined>(undefined);
+  const [quote, setQuote] = useState<Quote | undefined>(undefined);
 
   useEffect(() => {
-    getPurpleQuote().then(data => setQuote(data));
+    getPurpleQuote().then((data) => setQuote(data));
     console.log(quote);
-  },[])
+  }, []);
 
   return (
-    <div className='moodPurple'>
-      <h1 className="header">Romance, Love, Passion</h1>
+    <div className="moodPurple">
+      <h1 className="purple-header">Romance, Love, Passion</h1>
       <div className="quotes">
         {quote?.quote}
-      <div></div>
-        -{quote?.author}
+        <div></div>-{quote?.author}
       </div>
       <div className="books-container">
         <img className="book-img" src="MeetMe.jpeg"></img>
@@ -78,7 +76,9 @@ export function PurpleMood() {
         <img className="img-size" src="The-Notebook.jpeg"></img>
         <img className="img-size" src="purple1movie.jpg"></img>
       </div>
-      <MusicPlayer></MusicPlayer>
+      <div className="musicPlayer">
+        <MusicPlayer></MusicPlayer>
+      </div>
     </div>
   );
 }

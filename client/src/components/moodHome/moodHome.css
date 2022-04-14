@@ -4,27 +4,39 @@
   box-sizing: border-box;
 }
 .moodHome {
-  background: slateblue;
-  height: 100vh;
+  background: black;
+  height: 100%;
 }
-.header{
-  font-family: 'Pacifico', cursive;
+
+.header {
+  font-family: "My Soul", cursive;
   color: white;
+  font-size: 30px;
+  margin-left: 10px;
 }
+
+.discover {
+  /* font-family: "Staatliches", cursive; */
+  font-family: "My Soul", cursive;
+  color: white;
+  text-align: center;
+  font-size: 50px;
+}
+
 section {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
 }
-a{
+a {
   color: white;
   text-decoration: none;
 }
 .bowl {
   position: relative;
-  width: 180px;
-  height: 180px;
+  width: 215px;
+  height: 215px;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
   border: 8px solid transparent;
@@ -102,7 +114,7 @@ a{
   transform-origin: top center;
   animation: animateLiquid 10s linear infinite;
 }
-.liquid-orange{
+.liquid-orange {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -118,7 +130,7 @@ a{
   transform-origin: top center;
   animation: animateLiquid 10s linear infinite;
 }
-.liquid-blue{
+.liquid-blue {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -134,7 +146,7 @@ a{
   transform-origin: top center;
   animation: animateLiquid 10s linear infinite;
 }
-.liquid-yellow{
+.liquid-yellow {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -150,7 +162,7 @@ a{
   transform-origin: top center;
   animation: animateLiquid 10s linear infinite;
 }
-.liquid-red{
+.liquid-red {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -166,7 +178,7 @@ a{
   transform-origin: top center;
   animation: animateLiquid 10s linear infinite;
 }
-.liquid-green{
+.liquid-green {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -182,7 +194,7 @@ a{
   transform-origin: top center;
   animation: animateLiquid 10s linear infinite;
 }
-.liquid-black{
+.liquid-black {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -225,7 +237,7 @@ a{
   border-radius: 50%;
   filter: drop-shadow(0 0 30px #41c1fb);
 } */
-.liquid-purple::before{
+.liquid-purple::before {
   content: "";
   position: absolute;
   top: -10px;
@@ -235,7 +247,7 @@ a{
   border-radius: 50%;
   filter: drop-shadow(0 0 30px #41c1fb);
 }
-.liquid-orange::before{
+.liquid-orange::before {
   content: "";
   position: absolute;
   top: -10px;
@@ -245,7 +257,7 @@ a{
   border-radius: 50%;
   filter: drop-shadow(0 0 30px orange);
 }
-.liquid-blue::before{
+.liquid-blue::before {
   content: "";
   position: absolute;
   top: -10px;
@@ -255,7 +267,7 @@ a{
   border-radius: 50%;
   filter: drop-shadow(0 0 30px blue);
 }
-.liquid-yellow::before{
+.liquid-yellow::before {
   content: "";
   position: absolute;
   top: -10px;
@@ -265,7 +277,7 @@ a{
   border-radius: 50%;
   filter: drop-shadow(0 0 30px yellow);
 }
-.liquid-red::before{
+.liquid-red::before {
   content: "";
   position: absolute;
   top: -10px;
@@ -275,7 +287,7 @@ a{
   border-radius: 50%;
   filter: drop-shadow(0 0 30px red);
 }
-.liquid-green::before{
+.liquid-green::before {
   content: "";
   position: absolute;
   top: -10px;
@@ -285,7 +297,7 @@ a{
   border-radius: 50%;
   filter: drop-shadow(0 0 30px green);
 }
-.liquid-black::before{
+.liquid-black::before {
   content: "";
   position: absolute;
   top: -10px;
@@ -310,6 +322,86 @@ a{
   margin: 10px;
 }
 
-/* .green {
-  background: green;
-} */
+.purple-button {
+  border: none;
+  background-color: purple;
+  color: purple;
+  font-family: "My Soul", cursive;
+  font-size: 30px;
+}
+
+.purple-button:hover {
+  color: black;
+}
+
+.red-button {
+  border: none;
+  background-color: rgb(180, 36, 36);
+  color: rgb(180, 36, 36);
+  font-family: "My Soul", cursive;
+  font-size: 30px;
+}
+
+.red-button:hover {
+  color: black;
+}
+
+.orange-button {
+  border: none;
+  background-color: orangered;
+  color: orangered;
+  font-family: "My Soul", cursive;
+  font-size: 30px;
+}
+
+.orange-button:hover {
+  color: black;
+}
+
+.yellow-button {
+  border: none;
+  background-color: rgb(198, 198, 49);
+  color: rgb(198, 198, 49);
+  font-family: "My Soul", cursive;
+  font-size: 30px;
+}
+
+.yellow-button:hover {
+  color: black;
+}
+
+.green-button {
+  border: none;
+  background-color: rgb(63, 160, 63);
+  color: rgb(63, 160, 63);
+  font-family: "My Soul", cursive;
+  font-size: 30px;
+}
+
+.green-button:hover {
+  color: black;
+}
+
+.blue-button {
+  border: none;
+  background-color: rgb(11, 11, 141);
+  color: rgb(11, 11, 141);
+  font-family: "My Soul", cursive;
+  font-size: 30px;
+}
+
+.blue-button:hover {
+  color: black;
+}
+
+.black-button {
+  border: none;
+  background-color: rgb(20, 19, 19);
+  color: rgb(20, 19, 19);
+  font-family: "My Soul", cursive;
+  font-size: 30px;
+}
+
+.black-button:hover {
+  color: black;
+}

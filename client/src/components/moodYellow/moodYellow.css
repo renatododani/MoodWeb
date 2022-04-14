@@ -1,4 +1,12 @@
-.moodYellow{
-    background-color: gold;
-    height: 100vh;
+.moodYellow {
+  background-color: rgba(255, 217, 0, 0.077);
+  height: 100%;
+}
+
+.yellow-header {
+  font-family: "My Soul", cursive;
+  font-size: 60px;
+  text-align: center;
+  padding-top: 20px;
+  color: gold;
 }
