@@ -9,6 +9,6 @@ export interface Quote {
 
 export function getPurpleQuote() {
 
-    return axios.get<Quote>('/purple')
+    return axios.get<Quote|undefined>('/purple')
     .then(response => response.data)
 }

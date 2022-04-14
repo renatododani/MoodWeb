@@ -8,20 +8,20 @@ import { Quote } from "../../service/getPurple";
 
 export function PurpleMood() {
 
-  const [quote, setQuote] = useState<Quote>({id: 1, color: 'purple', quote: 'asdfasdf', author: 'asdfasdf'});
+  const [quote, setQuote] = useState<Quote|undefined>(undefined);
 
   useEffect(() => {
     getPurpleQuote().then(data => setQuote(data));
     console.log(quote);
-  }, [])
+  },[])
 
   return (
     <div className='moodPurple'>
       <h1 className="header">Romance, Love, Passion</h1>
       <div className="quotes">
-      {quote.quote}
+        {quote?.quote}
       <div></div>
-      -{quote.author}
+        -{quote?.author}
       </div>
       <div className="books-container">
         <img className="book-img" src="MeetMe.jpeg"></img>
@@ -78,7 +78,7 @@ export function PurpleMood() {
         <img className="img-size" src="The-Notebook.jpeg"></img>
         <img className="img-size" src="purple1movie.jpg"></img>
       </div>
-      {/* <MusicPlayer></MusicPlayer> */}
+      <MusicPlayer></MusicPlayer>
     </div>
   );
 }
