@@ -1,18 +1,24 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { MusicPlayer } from "../musicplayer/musicplayer";
 import '../moodBlack/moodBlack.css'
+import { getBlackQuote, Quote } from "../../service/getQuotes";
 
 export function BlackMood() {
+  const [quote, setQuote] = useState<Quote|undefined>(undefined);
+
+  useEffect(() => {
+    getBlackQuote().then(data => setQuote(data));
+    console.log(quote);
+  },[])
   return (
     <div className='moodBlack'>
       <h1 className='header'>Drained, Overworked</h1>
-      <ul className="quotes">
-        <li>
-        "When the going get tough, the tough get going"
-          -Joseph P. Kennedy Sr.
-        </li>
-      </ul>
+      <div className="quotes">
+        {quote?.quote}
+        <div></div>
+        -{quote?.author}
+      </div>
       <div className="books-container">
         <img className="book-img" src="black1.webp"></img>
         <div className="name-description">

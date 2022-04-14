@@ -1,9 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { MusicPlayer } from "../musicplayer/musicplayer";
 import '../moodOrange/moodOrange.css'
+import { getOrangeQuote, Quote } from "../../service/getQuotes";
 
 export function OrangeMood() {
+
+  const [quote, setQuote] = useState<Quote|undefined>(undefined);
+
+  useEffect(() => {
+    getOrangeQuote().then(data => setQuote(data));
+    console.log(quote);
+  },[])
+  
   return (
     <div className='moodOrange'>
       <h1 className='header'>Annoyed, Frustrated</h1>

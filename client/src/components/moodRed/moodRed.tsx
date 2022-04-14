@@ -1,18 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { MusicPlayer } from "../musicplayer/musicplayer";
 import '../moodRed/moodRed.css'
+import { getRedQuote, Quote } from "../../service/getQuotes";
 
 export function RedMood() {
+
+  const [quote, setQuote] = useState<Quote|undefined>(undefined);
+
+  useEffect(() => {
+    getRedQuote().then(data => setQuote(data));
+    console.log(quote);
+  },[])
+
   return (
     <div className='moodRed'>
       <h1 className='header'>Anger, Frustration, Passion</h1>
-      <ul className="quotes">
-        <li>
-        "Fear is the path to the dark side. Fear leads to anger. Anger leads to hate. Hate leads to suffering"
-          -Yoda
-        </li>
-      </ul>
+      <div className="quotes">
+      {quote?.quote}
+      <div></div>
+        -{quote?.author}
+      </div>
 
       <div className="books-container">
         <img className="book-img" src="red1.jpg"></img>

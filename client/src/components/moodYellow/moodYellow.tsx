@@ -1,18 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { MusicPlayer } from "../musicplayer/musicplayer";
 import '../moodYellow/moodYellow.css'
+import { getYellowQuote, Quote } from "../../service/getQuotes";
 
 export function YellowMood() {
+
+  const [quote, setQuote] = useState<Quote|undefined>(undefined);
+
+  useEffect(() => {
+    getYellowQuote().then(data => setQuote(data));
+    console.log(quote);
+  },[])
+
   return (
     <div className='moodYellow'>
       <h1 className="header">Bored, Nervous, Anxious</h1>
-      <ul className="quotes">
-        <li>
-        "You can't control things by being nervous about it"
-          -Tina Fey
-        </li>
-      </ul>
+      <div className="quotes">
+        {quote?.quote}
+        <div></div>
+        -{quote?.author}
+      </div>
 
       <div className="books-container">
         <img className="book-img" src="yellow1.jpg"></img>
