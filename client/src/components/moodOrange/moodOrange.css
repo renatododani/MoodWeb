@@ -1,4 +1,12 @@
-.moodOrange{
-    background-color: orange;
-    height: 100vh;
+.moodOrange {
+  background-color: rgba(255, 166, 0, 0.268);
+  height: 100%;
+}
+
+.orange-header {
+  font-family: "My Soul", cursive;
+  font-size: 60px;
+  text-align: center;
+  padding-top: 20px;
+  color: orange;
 }

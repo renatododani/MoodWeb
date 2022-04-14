@@ -1,4 +1,12 @@
-.moodBlue{
-    background-color: rgb(54, 54, 232);
-    height: 100vh;
+.moodBlue {
+  background-color: rgba(54, 54, 232, 0.305);
+  height: 100%;
+}
+
+.blue-header {
+  font-family: "My Soul", cursive;
+  font-size: 60px;
+  text-align: center;
+  padding-top: 20px;
+  color: blue;
 }

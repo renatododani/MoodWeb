@@ -1,50 +1,53 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../moodHome/moodHome.css";
-import axios from 'axios';
+import axios from "axios";
 
 export function MoodHome() {
-
-  let navigate:any = useNavigate();
+  let navigate: any = useNavigate();
 
   function purpleButton() {
-    navigate('/purple');
+    navigate("/purple");
   }
   function redButton() {
-    navigate('/red');
+    navigate("/red");
   }
   function blueButton() {
-    navigate('/blue');
+    navigate("/blue");
   }
   function blackButton() {
-    navigate('/black');
+    navigate("/black");
   }
   function orangeButton() {
-    navigate('/orange');
+    navigate("/orange");
   }
   function yellowButton() {
-    navigate('/yellow');
+    navigate("/yellow");
   }
   function greenButton() {
-    navigate('/green');
+    navigate("/green");
   }
 
   const [user, setUser] = useState("User");
   return (
-    <div className='moodHome'>
-      <h1 className='header'>
-        Hello, User
-      </h1>
+    <div className="moodHome">
+      <h1 className="header">Hello, User</h1>
+      <h2 className="discover">Discover Your Mood</h2>
+
       <section>
         <div className="bowl-row">
           <div className="bowl">
             <div className="liquid-purple">
-              <button onClick={purpleButton}>Purple</button>
+              <button className="purple-button" onClick={purpleButton}>
+                Romantic
+              </button>
             </div>
           </div>
           <div className="bowl">
             <div className="liquid-red">
-            <button onClick={redButton}>Red</button>
+              <button className="red-button" onClick={redButton}>
+                Angry
+              </button>
             </div>
           </div>
         </div>
@@ -52,17 +55,23 @@ export function MoodHome() {
         <div className="bowl-row">
           <div className="bowl">
             <div className="liquid-orange">
-            <button onClick={orangeButton}>Orange</button>
+              <button className="orange-button" onClick={orangeButton}>
+                Annoyed
+              </button>
             </div>
           </div>
           <div className="bowl">
             <div className="liquid-yellow">
-            <button onClick={yellowButton}>Yellow</button>
+              <button className="yellow-button" onClick={yellowButton}>
+                Bored
+              </button>
             </div>
           </div>
           <div className="bowl">
             <div className="liquid-green">
-            <button onClick={greenButton}>Green</button>
+              <button className="green-button" onClick={greenButton}>
+                Happy
+              </button>
             </div>
           </div>
         </div>
@@ -70,12 +79,16 @@ export function MoodHome() {
         <div className="bowl-row">
           <div className="bowl">
             <div className="liquid-blue">
-            <button onClick={blueButton}>Blue</button>
+              <button className="blue-button" onClick={blueButton}>
+                Calm
+              </button>
             </div>
           </div>
           <div className="bowl">
             <div className="liquid-black">
-            <button onClick={blackButton}>Black</button>
+              <button className="black-button" onClick={blackButton}>
+                Drained
+              </button>
             </div>
           </div>
         </div>

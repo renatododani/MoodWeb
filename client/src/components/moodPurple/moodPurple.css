@@ -1,4 +1,24 @@
-.moodPurple{
-    background-color: purple;
-    height: 100vh;
+.moodPurple {
+  background-color: rgba(128, 0, 128, 0.222);
+  height: 100%;
+}
+
+/* .purple-header {
+  font-family: "My Soul", cursive;
+  font-size: 60px;
+  text-align: center;
+  background-color: purple;
+  height: 110px;
+  padding-top: 20px;
+} */
+
+.purple-header {
+  font-family: "My Soul", cursive;
+  font-size: 60px;
+  text-align: center;
+  padding-top: 20px;
+  color: purple;
+}
+
+@media screen and (min-width: 768px) {
 }

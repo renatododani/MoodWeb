@@ -1,4 +1,12 @@
-.moodGreen{
-    background-color: green;
-    height: 100vh;
+.moodGreen {
+  background-color: rgba(0, 128, 0, 0.079);
+  height: 100%;
+}
+
+.green-header {
+  font-family: "My Soul", cursive;
+  font-size: 60px;
+  text-align: center;
+  padding-top: 20px;
+  color: green;
 }
