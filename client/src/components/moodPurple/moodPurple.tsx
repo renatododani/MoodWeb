@@ -12,7 +12,7 @@ export function PurpleMood() {
 
   useEffect(() => {
     getPurpleQuote().then(data => setQuote(data));
-    console.log(quote)
+    console.log(quote);
   }, [])
 
   return (
