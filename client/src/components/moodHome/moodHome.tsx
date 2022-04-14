@@ -1,8 +1,16 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../moodHome/moodHome.css";
+import axios from 'axios';
 
 export function MoodHome() {
+
+  let navigate:any = useNavigate();
+
+  function purpleButton() {
+    navigate('/purple');
+  }
+
   const [user, setUser] = useState("User");
   return (
     <div className='moodHome'>
@@ -13,7 +21,7 @@ export function MoodHome() {
         <div className="bowl-row">
           <div className="bowl">
             <div className="liquid-purple">
-              <Link to="/purple">Purple</Link>
+              <button onClick={purpleButton}>Purple</button>
             </div>
           </div>
           <div className="bowl">

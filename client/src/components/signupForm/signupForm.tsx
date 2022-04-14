@@ -1,16 +1,22 @@
 import React, { useEffect } from "react";
 import './signupForm.css';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useState } from "react";
 
 
 export function SignUpForm() {
 
+   let navigate:any = useNavigate();
+
    const [firstName, setFirstName] = useState('');
    const [lastName, setLastName] = useState('');
    const [email, setEmail] = useState('');
    const [password, setPassword] = useState('');
+
+   function validateForm() {
+      return firstName.length > 0 && lastName.length > 0 && email.length > 0 && password.length > 0;
+   }
 
    function userSignup() {
          return axios.post(`/signup`, {
@@ -22,7 +28,9 @@ export function SignUpForm() {
          .then((response) => {
             console.log(response, response.data)
             return response.data
-         }).catch(e => {
+         })
+         .then(navigate('/login'))
+         .catch(e => {
             console.log(`Error `, e)
          });
    }
@@ -59,7 +67,7 @@ export function SignUpForm() {
                         <label>Password</label>
                         <input type="password" className="form-control" placeholder="Password" onChange={(e) => setPassword(e.target.value)}></input>
                      </div>
-                     <button type="submit" className="btn btn-black" onClick={userSignup}>Register</button>
+                     <button type="submit" className="btn btn-black" onClick={userSignup} disabled={!validateForm()}>Register</button>
       
                      <button type="submit" className="btn btn-secondary"><Link className='link-color' to='/login'>Already a Member?</Link></button>
                   </form>

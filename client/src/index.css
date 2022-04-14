@@ -53,6 +53,14 @@ code {
   justify-content: space-around;
 }
 
+.now-playing__cover{
+  max-width: 200px;
+  margin-top: 100px;
+}
+
+.button-container{
+  margin-left: 550px;
+}
 /* MEDIA PLAYER */
 
 /* @import url(https://fonts.googleapis.com/css?family=Roboto:400,300)
