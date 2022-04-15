@@ -29,12 +29,11 @@ app.use("/", blackRoute);
 const port = 3050;
 
 export const db = pg()({
-
-    host: 'localhost',
-    port: 5432,
-    user: 'postgres',
-    password: process.env.DATABASE_PASSWORD,
-    database: process.env.DATABASE_NAME
+  host: "localhost",
+  port: 5432,
+  user: "postgres",
+  password: process.env.DATABASE_PASSWORD,
+  database: process.env.DATABASE_NAME,
 });
 
 app.listen(port, () =>
