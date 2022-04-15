@@ -24,6 +24,7 @@ code {
 .quotes {
   list-style: none;
   font-size: 25px;
+  margin-left: 15px;
 }
 
 /* Books */

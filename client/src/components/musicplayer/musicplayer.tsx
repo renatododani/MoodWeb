@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./musicplayer.css";
+import { getTracksById, Track } from "../../service/getTracks";
 
 export function MusicPlayer() {
-  const track = {
+  const track:Track = {
     name: "",
     album: {
       images: [{ url: "" }],
@@ -13,7 +14,7 @@ export function MusicPlayer() {
   const [player, setPlayer] = useState<any>(undefined);
   const [is_paused, setPaused] = useState(false);
   const [is_active, setActive] = useState(false);
-  const [current_track, setTrack] = useState(track);
+  const [current_track, setTrack] = useState<Track>(track);
 
   useEffect(() => {
     const script = document.createElement("script");
@@ -35,6 +36,8 @@ export function MusicPlayer() {
 
       setPlayer(player);
 
+      
+
       player.addListener("ready", (result: { device_id: any }) => {
         console.log("Ready with Device ID", result.device_id);
       });
@@ -48,7 +51,8 @@ export function MusicPlayer() {
           return;
         }
 
-        setTrack(state.track_window.current_track);
+        // setTrack(state.track_window.current_track);
+        getTracksById().then((data:any) => setTrack(data));
         setPaused(state.paused);
 
         player.getCurrentState().then((state: any) => {

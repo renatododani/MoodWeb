@@ -2,9 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { MusicPlayer } from "../musicplayer/musicplayer";
 import "../moodPurple/moodPurple.css";
-import axios from "axios";
-import { getPurpleQuote } from "../../service/getQuotes";
-import { Quote } from "../../service/getQuotes";
+import { getPurpleQuote, Quote } from "../../service/getQuotes";
 
 export function PurpleMood() {
   const [quote, setQuote] = useState<Quote | undefined>(undefined);

@@ -9,7 +9,6 @@ export function OrangeMood() {
 
   useEffect(() => {
     getOrangeQuote().then((data) => setQuote(data));
-    console.log(quote);
   }, []);
 
   return (
