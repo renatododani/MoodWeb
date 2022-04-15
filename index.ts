@@ -29,11 +29,14 @@ app.use("/", blackRoute);
 const port = 3050;
 
 export const db = pg()({
-  host: "localhost",
+  host: "ec2-23-20-224-166.compute-1.amazonaws.com",
   port: 5432,
-  user: "postgres",
-  password: process.env.DATABASE_PASSWORD,
-  database: process.env.DATABASE_NAME,
+  user: "pmmtbpaoddgbxf",
+  password: '225629cd11cc48052cc24f71fa160547d4b96f9ed0d4eda5efab3b751aeb1b2c',
+  database: 'd9oiou4tj5o4k0',
+  ssl: {
+    rejectUnauthorized: false
+  }
 });
 
 app.listen(port, () =>
