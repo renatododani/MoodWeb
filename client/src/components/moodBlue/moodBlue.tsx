@@ -14,10 +14,14 @@ export function BlueMood() {
   return (
     <div className="moodBlue">
       <h1 className="blue-header">Tranquil, Calm, Relaxed</h1>
-      <div className="quotes">
-        {quote?.quote}
-        <div></div>-{quote?.author}
-      </div>
+      <div className="quote">
+  <span className="left">❝</span>
+  <blockquote>
+    {quote?.quote}Just thirty, with a well-paid job. depression and no love life, the narrator and anti-hero par excellence of this grim, funny, and clever novel smokes four packs of cigarettes a day and writes weird animal stories in his spare time.
+  </blockquote>
+  <small>{quote?.author} Margaret Peterson</small>
+  <span className="right">❞</span>
+  </div>
       <div className="books-container">
         <img className="book-img" src="blue1.jpg"></img>
         <div className="name-description">
