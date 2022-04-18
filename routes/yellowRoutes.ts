@@ -10,7 +10,19 @@ yellowRoute.get('/yellow', (req:any, res:any) => {
     .catch(error => console.log(error));
 });
 
-// purpleRoute.get('/purple', (req:any, res:any) => {
+yellowRoute.get('/yellow', (req:any, res:any) => {
 
-//     db.manyOrNone("select")
-// })
+    db.manyOrNone("select * from books where color = 'yellow' order by RANDOM();")
+    .then(data => res.json(data))
+    .catch(error => console.log(error));
+});
+
+yellowRoute.get('/yellow', (req:any, res:any) => {
+
+    db.manyOrNone("select * from movies where color = 'yellow' order by RANDOM();")
+    .then(data => res.json(data))
+    .catch(error => console.log(error));
+});
+
+
+
