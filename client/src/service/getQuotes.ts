@@ -7,11 +7,39 @@ export interface Quote {
     author:string;
 }
 
-export function getPurpleQuote() {
+export interface Books{
+    id:number;
+    color:string;
+    img: string;
+    title: string;
+    author:string;
+    description: string;
+}
 
+export interface Movies {
+    id:number;
+    title:string;
+    release_year:number;
+    color:string;
+    img:string;
+}
+
+//Purple component
+export function getPurpleQuote() {
     return axios.get<Quote|undefined>('/purple')
     .then(response => response.data)
 }
+// export function getPurpleBooks(){
+//     return axios.get<Books|undefined>('/purple')
+//     .then(response => response.data)
+// }
+// export function getPurpleMovies(){
+//     return axios.get<Movies|undefined>('/purple')
+//     .then(response => response.data)
+// }
+
+
+
 
 export function getRedQuote() {
 
