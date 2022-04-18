@@ -17,9 +17,9 @@ export function GreenMood() {
       <div className="quote">
   <span className="left">❝</span>
   <blockquote>
-    {quote?.quote}Just thirty, with a well-paid job. depression and no love life, the narrator and anti-hero par excellence of this grim, funny, and clever novel smokes four packs of cigarettes a day and writes weird animal stories in his spare time.
+    {quote?.quote}
   </blockquote>
-  <small>{quote?.author} Margaret Peterson</small>
+  <small>{quote?.author}</small>
   <span className="right">❞</span>
   </div>
       <div className="books-container">
