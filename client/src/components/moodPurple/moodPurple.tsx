@@ -3,13 +3,15 @@ import { Link } from "react-router-dom";
 import { MusicPlayer } from "../musicplayer/musicplayer";
 import "../moodPurple/moodPurple.css";
 import { getPurpleQuote, Quote } from "../../service/getQuotes";
+import { getPurpleBooks, Book } from "../../service/getBooks";
 
 export function PurpleMood() {
   const [quote, setQuote] = useState<Quote | undefined>(undefined);
+  const [book, setBook] = useState<Book | undefined>(undefined);
 
   useEffect(() => {
     getPurpleQuote().then((data) => setQuote(data));
-    console.log(quote);
+    getPurpleBooks().then((data) => setBook(data));
   }, []);
 
   return (
@@ -23,23 +25,20 @@ export function PurpleMood() {
   <small>{quote?.author}</small>
   <span className="right">❞</span>
   </div>
+  <div></div>
       <div className="books-container">
-        <img className="book-img" src="MeetMe.jpeg"></img>
+        <img className="book-img" src={book?.img}></img>
         <div className="name-description">
-          <li className="book-name">Meet Me in Paradise</li>
-          <p>By Libby Hubscher</p>
+          <p className="book-name">{book?.title}</p>
+          <p>By {book?.author}</p>
           <p className="book-description">
-            Marin's still grieving her mother's passing, so an island spa trip
-            with her sister seems like the perfect remedy. When her sister
-            misses the flight, she finds herself flying solo. Marin embarks on
-            an adventure in paradise in a journey filled with unexpected love
-            and self-discovery.
+            {book?.description}
           </p>
         </div>
       </div>
 
       <div className="books-container">
-        <img className="book-img" src="purple2.jpg"></img>
+        <img className="book-img" src={book?.img}></img>
         <div className="name-description">
           <li className="book-name">Seven Days in June</li>
           <p>By Tia Williams</p>
