@@ -1,1 +1,1 @@
-web: npm start --prefix MoodWeb
+# web: npm start --prefix MoodWeb
