@@ -41,7 +41,7 @@ insert into books (color,img,title,author,description) values ('yellow','yellow2
 insert into books (color,img,title,author,description) values ('yellow','yellow3.jpg','Running Out Of Time','Margaret Peterson Haddix','Jessie lives with her family in the frontier village of Clifton, Indiana, in 1840 -- or so she believes. When diphtheria strikes the village and the children of Clifton start dying, Jessies mother reveals a shocking secret,it is actually 1996, and they are living in a reconstructed village that serves as a tourist site. In the world outside, medicine exists that can cure the dread disease, and Jessies mother is sending her on a dangerous mission to bring back help.');
 
 
--- Movies Table 
+-- Quotes Table 
 
 create table quotes (
     id serial primary key,
@@ -84,3 +84,83 @@ insert into quotes (color,quote,author) values ('red','"You never know how stron
 insert into quotes (color,quote,author) values ('red','"It is not the mountain we conquer but ourselves"','Edmund Hillary');
 insert into quotes (color,quote,author) values ('red','"All great achievements require time"','Maya Angelou');
 insert into quotes (color,quote,author) values ('red','"When you think you have to figure out everything all at once. Breath. You’re Strong. You got this. Take it day by day"','Karen Salmansohn');
+
+
+-- Movies table
+create table movies (
+	id serial primary key,
+	title text not null,
+	release_year integer not null,
+	color text not null,
+	img text not null
+);
+insert into movies(title, release_year, color, img)
+values ('The Notebook', 2004, 'purple', 'purple1movie.jpg');
+insert into movies(title, release_year, color, img)
+values ('Palm Springs', 2020, 'purple', 'purple2movie.jpg');
+insert into movies(title, release_year, color, img)
+values ('The Lovebirds', 2020, 'purple', 'purple3movie.jpg');
+insert into movies(title, release_year, color, img)
+values ('Marry Me', 2022, 'purple', 'purple4movie.jpg');
+insert into movies(title, release_year, color, img)
+values ('The Royal Treatment', 2022, 'purple', 'purple5movie.jpg');
+insert into movies(title, release_year, color, img)
+values ('Suicide Squad', 2016, 'red', 'red1movie.jpg');
+insert into movies(title, release_year, color, img)
+values ('Inglourious Basterds', 2009, 'red', 'red2movie.jpg');
+insert into movies(title, release_year, color, img)
+values ('John Wick', 2014, 'red', 'red3movie.jpg');
+insert into movies(title, release_year, color, img)
+values ('Halloween', 1978, 'red', 'red4movie.jpg');
+insert into movies(title, release_year, color, img)
+values ('RoboCop', 1987, 'red', 'red5movie.jpg');
+insert into movies(title, release_year, color, img)
+values ('Dont Look Up', 2021, 'orange', 'orange1movie.jpg');
+insert into movies(title, release_year, color, img)
+values ('Office Space', 1999, 'orange', 'orange2movie.jpg');
+insert into movies(title, release_year, color, img)
+values ('No Country For Old Men', 2007, 'orange', 'orange3movie.jpg');
+insert into movies(title, release_year, color, img)
+values ('Anger Management', 2012, 'orange', 'orange4movie.jpg');
+insert into movies(title, release_year, color, img)
+values ('Girl, Interrupted', 1999, 'orange', 'orange5movie.jpg');
+insert into movies(title, release_year, color, img)
+values ('The Shining', 1980, 'yellow', 'yellow1movie.jpg');
+insert into movies(title, release_year, color, img)
+values ('Uncut Gems', 2019, 'yellow', 'yellow2movie.jpg');
+insert into movies(title, release_year, color, img)
+values ('Parasite', 2019, 'yellow', 'yellow3movie.jpg');
+insert into movies(title, release_year, color, img)
+values ('The Stanford Prison Experiment', 2015, 'yellow', 'yellow4movie.jpg');
+insert into movies(title, release_year, color, img)
+values ('127 Hours', 2010, 'yellow', 'yellow5movie.jpg');
+insert into movies(title, release_year, color, img)
+values ('Little Miss Sunshine', 2006, 'green', 'green1movie.jpg');
+insert into movies(title, release_year, color, img)
+values ('Crazy Rich Asians', 2018, 'green', 'green2movie.jpg');
+insert into movies(title, release_year, color, img)
+values ('School of Rock', 2003, 'green', 'green3movie.jpg');
+insert into movies(title, release_year, color, img)
+values ('Step Brothers', 2008, 'green', 'green4movie.jpg');
+insert into movies(title, release_year, color, img)
+values ('Elf', 2003, 'green', 'green5movie.jpg');
+insert into movies(title, release_year, color, img)
+values ('Chef', 2014, 'blue', 'blue1movie.jpg');
+insert into movies(title, release_year, color, img)
+values ('Paddington', 2014, 'blue', 'blue2movie.jpg');
+insert into movies(title, release_year, color, img)
+values ('Spirited Away', 2001, 'blue', 'blue3movie.jpg');
+insert into movies(title, release_year, color, img)
+values ('Amélie', 2001, 'blue', 'blue4movie.jpg');
+insert into movies(title, release_year, color, img)
+values ('March of the Penguins', 2005, 'blue', 'blue5movie.jpg');
+insert into movies(title, release_year, color, img)
+values ('The Truman Show', 1998, 'black', 'black1movie.jpg');
+insert into movies(title, release_year, color, img)
+values ('Falling Down', 1993, 'black', 'black2movie.jpg');
+insert into movies(title, release_year, color, img)
+values ('Dunkirk', 2017, 'black', 'black3movie.jpg');
+insert into movies(title, release_year, color, img)
+values ('Schindlers List', 1993, 'black', 'black4movie.jpg');
+insert into movies(title, release_year, color, img)
+values ('The Platform', 2019, 'black', 'black5movie.jpg');
