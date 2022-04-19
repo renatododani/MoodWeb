@@ -14,26 +14,26 @@ export function getPurpleBooks(){
     .then(response => response.data)
 }
 export function getRedBooks(){
-    return axios.get<Book|undefined>('/red')
+    return axios.get<Book[]>('/red-books')
     .then(response => response.data)
 }
 export function getOrangeBooks(){
-    return axios.get<Book|undefined>('/orange')
+    return axios.get<Book[]>('/orange-books')
     .then(response => response.data)
 }
 export function getYellowBooks(){
-    return axios.get<Book|undefined>('/yellow')
+    return axios.get<Book[]>('/yellow-books')
     .then(response => response.data)
 }
 export function getGreenBooks(){
-    return axios.get<Book|undefined>('/green')
+    return axios.get<Book[]>('/green-books')
     .then(response => response.data)
 }
 export function getBlueBooks(){
-    return axios.get<Book|undefined>('/blue')
+    return axios.get<Book[]>('/blue-books')
     .then(response => response.data)
 }
 export function getBlackBooks(){
-    return axios.get<Book|undefined>('/black')
+    return axios.get<Book[]>('/black-books')
     .then(response => response.data)
 }

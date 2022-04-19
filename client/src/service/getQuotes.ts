@@ -14,31 +14,31 @@ export function getPurpleQuote() {
 }
 export function getRedQuote() {
 
-    return axios.get<Quote|undefined>('/red')
+    return axios.get<Quote|undefined>('/red-quotes')
     .then(response => response.data)
 }
 export function getOrangeQuote() {
 
-    return axios.get<Quote|undefined>('/orange')
+    return axios.get<Quote|undefined>('/orange-quotes')
     .then(response => response.data)
 }
 export function getYellowQuote() {
 
-    return axios.get<Quote|undefined>('/yellow')
+    return axios.get<Quote|undefined>('/yellow-quotes')
     .then(response => response.data)
 }
 export function getGreenQuote() {
 
-    return axios.get<Quote|undefined>('/green')
+    return axios.get<Quote|undefined>('/green-quotes')
     .then(response => response.data)
 }
 export function getBlueQuote() {
 
-    return axios.get<Quote|undefined>('/blue')
+    return axios.get<Quote|undefined>('/blue-quotes')
     .then(response => response.data)
 }
 export function getBlackQuote() {
 
-    return axios.get<Quote|undefined>('/black')
+    return axios.get<Quote|undefined>('/black-quotes')
     .then(response => response.data)
 }

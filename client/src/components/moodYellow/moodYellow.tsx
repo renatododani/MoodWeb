@@ -3,69 +3,90 @@ import { Link } from "react-router-dom";
 import { MusicPlayer } from "../musicplayer/musicplayer";
 import "../moodYellow/moodYellow.css";
 import { getYellowQuote, Quote } from "../../service/getQuotes";
+import { getYellowBooks, Book } from "../../service/getBooks";
+import { getYellowMovies, Movie } from "../../service/getMovies";
 
 export function YellowMood() {
   const [quote, setQuote] = useState<Quote | undefined>(undefined);
+  const [book, setBook] = useState<Book[]>([]);
+  const [movie, setMovie] = useState<Movie[]>([]);
 
   useEffect(() => {
     getYellowQuote().then((data) => setQuote(data));
-    console.log(quote);
+    getYellowBooks().then((data) => setBook(data));
+    getYellowMovies().then((data) => setMovie(data))
   }, []);
 
   return (
     <div className="moodYellow">
-      <h1 className="yellow-header">Bored, Nervous, Anxious</h1>
-  <div className="quote">
-  <span className="left">❝</span>
-  <blockquote>
-    {quote?.quote}
-  </blockquote>
-  <small>{quote?.author}</small>
-  <span className="right">❞</span>
-  </div>
-      <div className="books-container">
-        <img className="book-img" src="yellow1.jpg"></img>
+      <h1 className="yellow-header">Anxious, Bored</h1>
+    <div className="quote">
+      <span className="left">❝</span>
+      <blockquote>
+        {quote?.quote}
+      </blockquote>
+      <small>{quote?.author}</small>
+      <span className="right">❞</span>
+    </div>
+
+    <div className="books-container">
+        <img className="book-img" src={book[0]?.img}></img>
         <div className="name-description">
-          <li className="book-name">Whatever</li>
-          <p>By Michel Houellebecq</p>
+          <p className="book-name">{book[0]?.title}</p>
+          <p>By {book[0]?.author}</p>
           <p className="book-description">
-            Just thirty, with a well-paid job. depression and no love life, the
-            narrator and anti-hero par excellence of this grim, funny, and
-            clever novel smokes four packs of cigarettes a day and writes weird
-            animal stories in his spare time. A painfully realistic portrayal of
-            the vanishing freedom of a world governed by science and by the
-            empty rituals of daily life.
+            {book[0]?.description}
           </p>
         </div>
-      </div>
+    </div>
 
-      <div className="books-container">
-        <img className="book-img" src="yellow2.jpg"></img>
-        <div className="name-description">
-          <li className="book-name">The Forgetting Machine</li>
-          <p>By Rodrigo Quian Quiroga</p>
-          <p className="book-description"></p>
-        </div>
+    <div className="books-container">
+      <img className="book-img" src={book[1]?.img}></img>
+      <div className="name-description">
+        <p className="book-name">{book[1]?.title}</p>
+        <p>By {book[1]?.author}</p>
+        <p className="book-description">
+          {book[1]?.description}
+        </p>
       </div>
+    </div>
 
-      <div className="books-container">
-        <img className="book-img" src="yellow3.jpg"></img>
-        <div className="name-description">
-          <li className="book-name">Running Out of Time</li>
-          <p>By Margaret Peterson Haddix</p>
-          <p className="book-description"></p>
-        </div>
-      </div>
+    <div className="books-container">
+      <img className="book-img" src={book[2]?.img}></img>
+      <div className="name-description">
+        <p className="book-name">{book[2]?.title}</p>
+        <p>By {book[2]?.author}</p>
+        <p className="book-description">
+          {book[2]?.description}
+        </p>
+    </div>
+  </div>
 
       <div className="movies-container">
-        <img className="img-size" src="yellow1movie.jpg"></img>
-        <img className="img-size" src="yellow2movie.jpg"></img>
-        <img className="img-size" src="yellow3movie.jpg"></img>
-        <img className="img-size" src=""></img>
-        <img className="img-size" src=""></img>
-        <img className="img-size" src=""></img>
+        <div className='movie'>
+          <img className="img-size" src={movie[0]?.img}></img>
+          <p>{movie[0]?.title} ({movie[0]?.release_year})</p>
+        </div>
+        <div className='movie'>
+          <img className="img-size" src={movie[1]?.img}></img>
+          <p>{movie[1]?.title} ({movie[1]?.release_year})</p>
+        </div>
+        <div className='movie'>
+          <img className="img-size" src={movie[2]?.img}></img>
+          <p>{movie[2]?.title} ({movie[2]?.release_year})</p>
+        </div>
+        <div className='movie'>
+          <img className="img-size" src={movie[3]?.img}></img>
+          <p>{movie[3]?.title} ({movie[3]?.release_year})</p>
+        </div>
+        <div className='movie'>
+          <img className="img-size" src={movie[4]?.img}></img>
+          <p>{movie[4]?.title} ({movie[4]?.release_year})</p>
+        </div> 
       </div>
-      <MusicPlayer></MusicPlayer>
+      <div className="musicPlayer">
+        <MusicPlayer></MusicPlayer>
+      </div>
     </div>
   );
 }

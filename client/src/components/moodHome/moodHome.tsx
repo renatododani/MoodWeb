@@ -46,7 +46,7 @@ export function MoodHome() {
           <div className="bowl">
             <div className="liquid-red">
               <button className="red-button" onClick={redButton}>
-                Angry
+                Anger
               </button>
             </div>
           </div>
@@ -63,7 +63,7 @@ export function MoodHome() {
           <div className="bowl">
             <div className="liquid-yellow">
               <button className="yellow-button" onClick={yellowButton}>
-                Bored
+                Anxious
               </button>
             </div>
           </div>

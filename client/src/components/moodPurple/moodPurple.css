@@ -1,5 +1,5 @@
 .moodPurple {
-  background-color: rgba(128, 0, 128, 0.222);
+  background-color: rgba(125, 10, 125, 0.742);
   height: 100%;
 }
 
@@ -17,7 +17,7 @@
   font-size: 60px;
   text-align: center;
   padding-top: 20px;
-  color: purple;
+  color: black;
 }
 
 @media screen and (min-width: 768px) {

@@ -3,69 +3,90 @@ import { Link } from "react-router-dom";
 import { MusicPlayer } from "../musicplayer/musicplayer";
 import "../moodBlue/moodBlue.css";
 import { getBlueQuote, Quote } from "../../service/getQuotes";
+import { getBlueBooks, Book } from "../../service/getBooks";
+import { getBlueMovies, Movie } from "../../service/getMovies";
 
 export function BlueMood() {
   const [quote, setQuote] = useState<Quote | undefined>(undefined);
+  const [book, setBook] = useState<Book[]>([]);
+  const [movie, setMovie] = useState<Movie[]>([]);
 
   useEffect(() => {
     getBlueQuote().then((data) => setQuote(data));
-    console.log(quote);
+    getBlueBooks().then((data) => setBook(data));
+    getBlueMovies().then((data) => setMovie(data));
   }, []);
+
   return (
     <div className="moodBlue">
-      <h1 className="blue-header">Tranquil, Calm, Relaxed</h1>
+      <h1 className="blue-header">Calm, Relaxed</h1>
       <div className="quote">
-  <span className="left">❝</span>
-  <blockquote>
-    {quote?.quote}
-  </blockquote>
-  <small>{quote?.author}</small>
-  <span className="right">❞</span>
-  </div>
+        <span className="left">❝</span>
+        <blockquote>
+          {quote?.quote}
+        </blockquote>
+        <small>{quote?.author}</small>
+        <span className="right">❞</span>
+      </div>
+
       <div className="books-container">
-        <img className="book-img" src="blue1.jpg"></img>
+          <img className="book-img" src={book[0]?.img}></img>
+          <div className="name-description">
+            <p className="book-name">{book[0]?.title}</p>
+            <p>By {book[0]?.author}</p>
+            <p className="book-description">
+              {book[0]?.description}
+            </p>
+          </div>
+      </div>
+
+      <div className="books-container">
+        <img className="book-img" src={book[1]?.img}></img>
         <div className="name-description">
-          <li className="book-name">Ikigai</li>
-          <p>By Hector Garcia and Francesc Miralles</p>
+          <p className="book-name">{book[1]?.title}</p>
+          <p>By {book[1]?.author}</p>
           <p className="book-description">
-            According to the Japanese, everyone has an ikigai—a reason for
-            living. And according to the residents of the Japanese village with
-            the world’s longest-living people, finding it is the key to a
-            happier and longer life. Having a strong sense of ikigai—where what
-            you love, what you’re good at, what you can get paid for, and what
-            the world needs all overlap—means that each day is infused with
-            meaning. It’s the reason we get up in the morning.
+            {book[1]?.description}
           </p>
         </div>
       </div>
 
       <div className="books-container">
-        <img className="book-img" src=""></img>
+        <img className="book-img" src={book[2]?.img}></img>
         <div className="name-description">
-          <li className="book-name"></li>
-          <p></p>
-          <p className="book-description"></p>
-        </div>
-      </div>
-
-      <div className="books-container">
-        <img className="book-img" src=""></img>
-        <div className="name-description">
-          <li className="book-name"></li>
-          <p></p>
-          <p className="book-description"></p>
+          <p className="book-name">{book[2]?.title}</p>
+          <p>By {book[2]?.author}</p>
+          <p className="book-description">
+            {book[2]?.description}
+          </p>
         </div>
       </div>
 
       <div className="movies-container">
-        <img className="img-size" src="blue1movie.jpg"></img>
-        <img className="img-size" src="blue2movie.jpg"></img>
-        <img className="img-size" src="blue3movie.jpg"></img>
-        <img className="img-size" src=""></img>
-        <img className="img-size" src=""></img>
-        <img className="img-size" src=""></img>
+        <div className='movie'>
+          <img className="img-size" src={movie[0]?.img}></img>
+          <p>{movie[0]?.title} ({movie[0]?.release_year})</p>
+        </div>
+        <div className='movie'>
+          <img className="img-size" src={movie[1]?.img}></img>
+          <p>{movie[1]?.title} ({movie[1]?.release_year})</p>
+        </div>
+        <div className='movie'>
+          <img className="img-size" src={movie[2]?.img}></img>
+          <p>{movie[2]?.title} ({movie[2]?.release_year})</p>
+        </div>
+        <div className='movie'>
+          <img className="img-size" src={movie[3]?.img}></img>
+          <p>{movie[3]?.title} ({movie[3]?.release_year})</p>
+        </div>
+        <div className='movie'>
+          <img className="img-size" src={movie[4]?.img}></img>
+          <p>{movie[4]?.title} ({movie[4]?.release_year})</p>
+        </div>  
       </div>
-      <MusicPlayer></MusicPlayer>
+      <div className="musicPlayer">
+        <MusicPlayer></MusicPlayer>
+      </div>
     </div>
   );
 }

@@ -3,70 +3,89 @@ import { Link } from "react-router-dom";
 import { MusicPlayer } from "../musicplayer/musicplayer";
 import "../moodBlack/moodBlack.css";
 import { getBlackQuote, Quote } from "../../service/getQuotes";
+import { getBlackBooks, Book } from "../../service/getBooks";
+import { getBlackMovies, Movie } from "../../service/getMovies";
 
 export function BlackMood() {
   const [quote, setQuote] = useState<Quote | undefined>(undefined);
+  const [book, setBook] = useState<Book[]>([]);
+  const [movie, setMovie] = useState<Movie[]>([]);
 
   useEffect(() => {
     getBlackQuote().then((data) => setQuote(data));
-    console.log(quote);
+    getBlackBooks().then((data) => setBook(data));
+    getBlackMovies().then((data) => setMovie(data));
   }, []);
   return (
     <div className="moodBlack">
-      <h1 className="black-header">Drained, Overworked, Tired</h1>
-      <div className="quote">
-  <span className="left">❝</span>
-  <blockquote>
-    {quote?.quote}
-  </blockquote>
-  <small>{quote?.author}</small>
-  <span className="right">❞</span>
-  </div>
-      <div className="books-container">
-        <img className="book-img" src="black1.webp"></img>
+      <h1 className="black-header">Drained, Overwhelmed</h1>
+    <div className="quote">
+      <span className="left">❝</span>
+      <blockquote>
+        {quote?.quote}
+      </blockquote>
+      <small>{quote?.author}</small>
+      <span className="right">❞</span>
+    </div>
+
+    <div className="books-container">
+        <img className="book-img" src={book[0]?.img}></img>
         <div className="name-description">
-          <li className="book-name">Essentialism</li>
-          <p>By Greg McKeown</p>
+          <p className="book-name">{book[0]?.title}</p>
+          <p>By {book[0]?.author}</p>
           <p className="book-description">
-            Essentialism is not one more thing—it’s a whole new way of doing
-            everything. It’s about doing less, but better, in every area of our
-            lives. Essentialism is a movement whose time has come. By forcing us
-            to apply more selective criteria for what is Essential, the
-            disciplined pursuit of less empowers us to reclaim control of our
-            own choices about where to spend our precious time and
-            energy—instead of giving others the implicit permission to choose
-            for us.
+            {book[0]?.description}
           </p>
         </div>
-      </div>
+    </div>
 
-      <div className="books-container">
-        <img className="book-img" src=""></img>
-        <div className="name-description">
-          <li className="book-name"></li>
-          <p></p>
-          <p className="book-description"></p>
-        </div>
+    <div className="books-container">
+      <img className="book-img" src={book[1]?.img}></img>
+      <div className="name-description">
+        <p className="book-name">{book[1]?.title}</p>
+        <p>By {book[1]?.author}</p>
+        <p className="book-description">
+          {book[1]?.description}
+        </p>
       </div>
+    </div>
 
-      <div className="books-container">
-        <img className="book-img" src=""></img>
-        <div className="name-description">
-          <li className="book-name"></li>
-          <p></p>
-          <p className="book-description"></p>
-        </div>
-      </div>
+    <div className="books-container">
+      <img className="book-img" src={book[2]?.img}></img>
+      <div className="name-description">
+        <p className="book-name">{book[2]?.title}</p>
+        <p>By {book[2]?.author}</p>
+        <p className="book-description">
+          {book[2]?.description}
+        </p>
+    </div>
+  </div>
 
       <div className="movies-container">
-        <img className="img-size" src="black1movie.jpg"></img>
-        <img className="img-size" src="black2movie.jpg"></img>
-        <img className="img-size" src="black3movie.jpg"></img>
-        <img className="img-size" src=""></img>
-        <img className="img-size" src=""></img>
-        <img className="img-size" src=""></img>
+        <div className='movie'>
+          <img className="img-size" src={movie[0]?.img}></img>
+          <p>{movie[0]?.title} ({movie[0]?.release_year})</p>
+        </div>
+        <div className='movie'>
+          <img className="img-size" src={movie[1]?.img}></img>
+          <p>{movie[1]?.title} ({movie[1]?.release_year})</p>
+        </div>
+        <div className='movie'>
+          <img className="img-size" src={movie[2]?.img}></img>
+          <p>{movie[2]?.title} ({movie[2]?.release_year})</p>
+        </div>
+        <div className='movie'>
+          <img className="img-size" src={movie[3]?.img}></img>
+          <p>{movie[3]?.title} ({movie[3]?.release_year})</p>
+        </div>
+        <div className='movie'>
+          <img className="img-size" src={movie[4]?.img}></img>
+          <p>{movie[4]?.title} ({movie[4]?.release_year})</p>
+        </div> 
       </div>
-      <MusicPlayer></MusicPlayer>
+      <div className="musicPlayer">
+        <MusicPlayer></MusicPlayer>
+      </div>
     </div>
   );
 }

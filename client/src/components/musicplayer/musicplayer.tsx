@@ -51,8 +51,8 @@ export function MusicPlayer() {
           return;
         }
 
-        // setTrack(state.track_window.current_track);
-        getTracksById().then((data:any) => setTrack(data));
+        setTrack(state.track_window.current_track);
+        // getTracksById().then((data:any) => setTrack(data));
         setPaused(state.paused);
 
         player.getCurrentState().then((state: any) => {
@@ -80,10 +80,8 @@ export function MusicPlayer() {
             <div className="now-playing__artist">
               {current_track.artists[0].name}
             </div>
-          </div>
-        </div>
-      </div>
-      <div className='button-container'>
+
+            <div className='button-container'>
         <button
           className="btn-spotify"
           onClick={() => {
@@ -111,6 +109,10 @@ export function MusicPlayer() {
           &gt;&gt;
         </button>
       </div>
+          </div>
+        </div>
+      </div>
+      
     </div>
   );
 }

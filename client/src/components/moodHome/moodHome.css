@@ -328,10 +328,14 @@ a {
   color: purple;
   font-family: "My Soul", cursive;
   font-size: 30px;
+  background: transparent;
+  border: none !important;
+  height: 150px;
+  width: 200px;
 }
 
 .purple-button:hover {
-  color: black;
+  color: white;
 }
 
 .red-button {
@@ -340,10 +344,14 @@ a {
   color: rgb(180, 36, 36);
   font-family: "My Soul", cursive;
   font-size: 30px;
+  background: transparent;
+  border: none !important;
+  height: 150px;
+  width: 200px;
 }
 
 .red-button:hover {
-  color: black;
+  color: white;
 }
 
 .orange-button {
@@ -352,10 +360,14 @@ a {
   color: orangered;
   font-family: "My Soul", cursive;
   font-size: 30px;
+  background: transparent;
+  border: none !important;
+  height: 150px;
+  width: 200px;
 }
 
 .orange-button:hover {
-  color: black;
+  color: white;
 }
 
 .yellow-button {
@@ -364,10 +376,14 @@ a {
   color: rgb(198, 198, 49);
   font-family: "My Soul", cursive;
   font-size: 30px;
+  background: transparent;
+  border: none !important;
+  height: 150px;
+  width: 200px;
 }
 
 .yellow-button:hover {
-  color: black;
+  color: white;
 }
 
 .green-button {
@@ -376,10 +392,14 @@ a {
   color: rgb(63, 160, 63);
   font-family: "My Soul", cursive;
   font-size: 30px;
+  background: transparent;
+  border: none !important;
+  height: 150px;
+  width: 200px;
 }
 
 .green-button:hover {
-  color: black;
+  color: white;
 }
 
 .blue-button {
@@ -388,10 +408,14 @@ a {
   color: rgb(11, 11, 141);
   font-family: "My Soul", cursive;
   font-size: 30px;
+  background: transparent;
+  border: none !important;
+  height: 150px;
+  width: 200px;
 }
 
 .blue-button:hover {
-  color: black;
+  color: white;
 }
 
 .black-button {
@@ -400,8 +424,12 @@ a {
   color: rgb(20, 19, 19);
   font-family: "My Soul", cursive;
   font-size: 30px;
+  background: transparent;
+  border: none !important;
+  height: 150px;
+  width: 200px;
 }
 
 .black-button:hover {
-  color: black;
+  color: white;
 }
