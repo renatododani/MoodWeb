@@ -9,7 +9,7 @@ export interface Quote {
 
 //Purple component
 export function getPurpleQuote() {
-    return axios.get<Quote|undefined>('/purple')
+    return axios.get<Quote|undefined>('/purple-quotes')
     .then(response => response.data)
 }
 export function getRedQuote() {

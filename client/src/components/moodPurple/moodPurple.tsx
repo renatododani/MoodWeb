@@ -7,7 +7,7 @@ import { getPurpleBooks, Book } from "../../service/getBooks";
 
 export function PurpleMood() {
   const [quote, setQuote] = useState<Quote | undefined>(undefined);
-  const [book, setBook] = useState<Book | undefined>(undefined);
+  const [book, setBook] = useState<Book[]>([]);
 
   useEffect(() => {
     getPurpleQuote().then((data) => setQuote(data));
@@ -25,46 +25,37 @@ export function PurpleMood() {
   <small>{quote?.author}</small>
   <span className="right">❞</span>
   </div>
-  <div></div>
       <div className="books-container">
-        <img className="book-img" src={book?.img}></img>
+        <li>
+          <img className="book-img" src={book[0]?.img}></img>
+          <div className="name-description">
+            <p className="book-name">{book[0]?.title}</p>
+            <p>By {book[0]?.author}</p>
+            <p className="book-description">
+              {book[0]?.description}
+            </p>
+          </div>
+        </li>
+      </div>
+      <div></div>
+      <div className="books-container">
+        <img className="book-img" src={book[1]?.img}></img>
         <div className="name-description">
-          <p className="book-name">{book?.title}</p>
-          <p>By {book?.author}</p>
+          <li className="book-name">{book[1]?.title}</li>
+          <p>By {book[1]?.author}</p>
           <p className="book-description">
-            {book?.description}
+            {book[1]?.description}
           </p>
         </div>
       </div>
 
       <div className="books-container">
-        <img className="book-img" src={book?.img}></img>
+        <img className="book-img" src={book[2]?.img}></img>
         <div className="name-description">
-          <li className="book-name">Seven Days in June</li>
-          <p>By Tia Williams</p>
+          <li className="book-name">{book[2]?.title}</li>
+          <p>By {book[2]?.author}</p>
           <p className="book-description">
-            Eva Mercy writes best-selling vampire books, but she's an exhausted
-            single mom with no time to “romance a real-life penis.” She channels
-            desire into her novels. But then she sees Shane at a conference. He
-            stole her heart during a wild week 15 years ago, and now the two
-            give it another round. Get ready for laugh-out-loud writing in one
-            of the best new steamy romance novels, which also has an engrossing
-            story with a true heart.
-          </p>
-        </div>
-      </div>
-
-      <div className="books-container">
-        <img className="book-img" src="purple3.jpg"></img>
-        <div className="name-description">
-          <li className="book-name">The Right Swipe</li>
-          <p>By Alisha Rai</p>
-          <p className="book-description">
-            Meet Rhiannon, the creator of a hot dating app who tries to follow
-            her own rules for hooking up. She's ghosted by a hottie, but when he
-            reemerges asking for a second chance, she has to revise her own
-            rules. Readers love Alisha Rai's latest novel for its modern,
-            multicultural romance filled with wit and fire.
+            {book[2]?.description}
           </p>
         </div>
       </div>
