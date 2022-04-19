@@ -1,75 +1,92 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { MusicPlayer } from "../musicplayer/musicplayer";
+import "../moodPurple/moodPurple.css";
+import { getPurpleQuote, Quote } from "../../service/getQuotes";
+import { getPurpleBooks, Book } from "../../service/getBooks";
+import { getPurpleMovies, Movie } from "../../service/getMovies";
 
 export function PurpleMood() {
+  const [quote, setQuote] = useState<Quote | undefined>(undefined);
+  const [book, setBook] = useState<Book[]>([]);
+  const [movie, setMovie] = useState<Movie[]>([]);
+
+  useEffect(() => {
+    getPurpleQuote().then((data) => setQuote(data));
+    getPurpleBooks().then((data) => setBook(data));
+    getPurpleMovies().then((data) => setMovie(data))
+  }, []);
+
   return (
-    <div>
-      <h1 className="header">Romance, Love, Passion</h1>
-      <ul className="quotes">
-        <li>
-          "Lots of people want to ride with you in the limo, but what you want
-          is someone who will take the bus with you when the limo breaks down.”
-          -Oprah Winfrey
-        </li>
-      </ul>
+    <div className="moodPurple">
+      <h1 className="purple-header">Romance, Passion</h1>
+    <div className="quote">
+      <span className="left">❝</span>
+      <blockquote>
+        {quote?.quote}
+      </blockquote>
+      <small>{quote?.author}</small>
+      <span className="right">❞</span>
+    </div>
 
-      <div className="books-container">
-        <img className="book-img" src="MeetMe.jpeg"></img>
+    <div className="books-container">
+        <img className="book-img" src={book[0]?.img}></img>
         <div className="name-description">
-          <li className="book-name">Meet Me in Paradise</li>
-          <p>By Libby Hubscher</p>
+          <p className="book-name">{book[0]?.title}</p>
+          <p>By {book[0]?.author}</p>
           <p className="book-description">
-            Marin's still grieving her mother's passing, so an island spa trip
-            with her sister seems like the perfect remedy. When her sister
-            misses the flight, she finds herself flying solo. Marin embarks on
-            an adventure in paradise in a journey filled with unexpected love
-            and self-discovery.
+            {book[0]?.description}
           </p>
         </div>
-      </div>
+    </div>
 
-      <div className="books-container">
-        <img className="book-img" src="purple2.jpg"></img>
-        <div className="name-description">
-          <li className="book-name">Seven Days in June</li>
-          <p>By Tia Williams</p>
-          <p className="book-description">
-            Eva Mercy writes best-selling vampire books, but she's an exhausted
-            single mom with no time to “romance a real-life penis.” She channels
-            desire into her novels. But then she sees Shane at a conference. He
-            stole her heart during a wild week 15 years ago, and now the two
-            give it another round. Get ready for laugh-out-loud writing in one
-            of the best new steamy romance novels, which also has an engrossing
-            story with a true heart.
-          </p>
-        </div>
+    <div className="books-container">
+      <img className="book-img" src={book[1]?.img}></img>
+      <div className="name-description">
+        <p className="book-name">{book[1]?.title}</p>
+        <p>By {book[1]?.author}</p>
+        <p className="book-description">
+          {book[1]?.description}
+        </p>
       </div>
+    </div>
 
-      <div className="books-container">
-        <img className="book-img" src="purple3.jpg"></img>
-        <div className="name-description">
-          <li className="book-name">The Right Swipe</li>
-          <p>By Alisha Rai</p>
-          <p className="book-description">
-            Meet Rhiannon, the creator of a hot dating app who tries to follow
-            her own rules for hooking up. She's ghosted by a hottie, but when he
-            reemerges asking for a second chance, she has to revise her own
-            rules. Readers love Alisha Rai's latest novel for its modern,
-            multicultural romance filled with wit and fire.
-          </p>
-        </div>
-      </div>
+    <div className="books-container">
+      <img className="book-img" src={book[2]?.img}></img>
+      <div className="name-description">
+        <p className="book-name">{book[2]?.title}</p>
+        <p>By {book[2]?.author}</p>
+        <p className="book-description">
+          {book[2]?.description}
+        </p>
+    </div>
+  </div>
 
       <div className="movies-container">
-        <img className="img-size" src="purple2movie.jpg"></img>
-        <img className="img-size" src="purple3movie.jpg"></img>
-        <img className="img-size" src="purple4movie.jpg"></img>
-        <img className="img-size" src="purple5movie.jpg"></img>
-        <img className="img-size" src="The-Notebook.jpeg"></img>
-        <img className="img-size" src="purple1movie.jpg"></img>
+        <div className='movie'>
+          <img className="img-size" src={movie[0]?.img}></img>
+          <p>{movie[0]?.title} ({movie[0]?.release_year})</p>
+        </div>
+        <div className='movie'>
+          <img className="img-size" src={movie[1]?.img}></img>
+          <p>{movie[1]?.title} ({movie[1]?.release_year})</p>
+        </div>
+        <div className='movie'>
+          <img className="img-size" src={movie[2]?.img}></img>
+          <p>{movie[2]?.title} ({movie[2]?.release_year})</p>
+        </div>
+        <div className='movie'>
+          <img className="img-size" src={movie[3]?.img}></img>
+          <p>{movie[3]?.title} ({movie[3]?.release_year})</p>
+        </div>
+        <div className='movie'>
+          <img className="img-size" src={movie[4]?.img}></img>
+          <p>{movie[4]?.title} ({movie[4]?.release_year})</p>
+        </div>  
       </div>
-      <MusicPlayer></MusicPlayer>
+      <div className="musicPlayer">
+        <MusicPlayer></MusicPlayer>
+      </div>
     </div>
   );
 }

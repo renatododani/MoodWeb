@@ -13,17 +13,18 @@ code {
 }
 
 .img-size {
-  max-width: 183px;
+  max-width: 165px;
   margin-right: 20px;
 }
 
-.header {
+/* .header {
   margin: 20px;
-}
+} */
 
 .quotes {
   list-style: none;
   font-size: 25px;
+  margin-left: 15px;
 }
 
 /* Books */
@@ -32,14 +33,14 @@ code {
   display: flex;
   align-items: center;
   list-style: none;
-  margin: 30px;
+  margin: 15px;
   border-bottom: solid lightgrey 1px;
 }
 
 .book-img {
   max-width: 130px;
   margin-right: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .book-name {
@@ -51,9 +52,16 @@ code {
 .movies-container {
   display: flex;
   justify-content: space-around;
-  margin: 30px;
 }
 
+.now-playing__cover{
+  max-width: 200px;
+  margin-top: 100px;
+}
+
+.button-container{
+  margin-left: 550px;
+}
 /* MEDIA PLAYER */
 
 /* @import url(https://fonts.googleapis.com/css?family=Roboto:400,300)

@@ -1,0 +1,12 @@
+.moodBlack {
+  background-color: rgba(3, 3, 3, 0.687);
+  height: 100%;
+}
+
+.black-header {
+  font-family: "My Soul", cursive;
+  font-size: 60px;
+  text-align: center;
+  padding-top: 20px;
+  color: black;
+}
