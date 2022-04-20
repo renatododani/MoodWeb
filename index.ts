@@ -34,13 +34,18 @@ export const db = pg()({
   //   rejectUnauthorized: false
   // }
   host: 'localhost',
+  port: 5432,
   user: 'postgres',
   password: process.env.DATABASE_PASSWORD,
   database: process.env.DATABASE_NAME,
-});
+  ssl: {
+    rejectUnauthorized: false,
+}});
 
 app.listen(port, () =>
   console.log(
     `Listening on port: ${port}. ${process.env.DATABASE_NAME} ${process.env.DATABASE_PASSWORD}`
   )
 );
+
+module.exports = app;
