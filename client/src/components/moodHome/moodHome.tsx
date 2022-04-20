@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../moodHome/moodHome.css";
 import axios from "axios";
+import { getUser, User } from "../../service/getUser";
 
 export function MoodHome() {
   let navigate: any = useNavigate();
@@ -28,10 +29,15 @@ export function MoodHome() {
     navigate("/green");
   }
 
-  const [user, setUser] = useState("User");
+  const [user, setUser] = useState<User|undefined>(undefined);
+
+  useEffect(() => {
+    getUser().then((data) => setUser(data))
+  });
+
   return (
     <div className="moodHome">
-      <h1 className="header">Hello, User</h1>
+      <h1 className="header">Hello, {user?.first_name}</h1>
       <h2 className="discover">Discover Your Mood</h2>
 
       <section>
