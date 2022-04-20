@@ -10,3 +10,8 @@
   padding-top: 20px;
   color: black;
 }
+
+iframe {
+  position: fixed;
+  bottom: 0;
+}

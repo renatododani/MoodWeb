@@ -66,11 +66,11 @@ insert into quotes (color,quote,author) values ('blue','"It is neither wealth no
 insert into quotes (color,quote,author) values ('blue','"Tranquility is a beach state of mind"','Anonymous');
 insert into quotes (color,quote,author) values ('blue','"From tranquility emerges power and strength"','C. Joybell C');
 insert into quotes (color,quote,author) values ('blue','"Do not let the behavior of others destroy your inner peace"','Dalai Lama');
-insert into quotes (color,quote,author) values ('orange','"You don’t have to be positive all the time. Its perfectly okay to feel sad, angry, annoyed ,frustrated, scared or anxious. Having feelings doesn’t make you a negative person. It makes you human"','Lori Deschene');
-insert into quotes (color,quote,author) values ('orange','"Fear is the path to the dark side. Fear leads to anger. Anger leads to hate. Hate leads to suffering"','Yoda');
-insert into quotes (color,quote,author) values ('orange','"When angry count to ten before you speak. If very angry, count to one hundred"','Thomas Jefferson');
-insert into quotes (color,quote,author) values ('orange','"If you are patient in one moment of anger, you will escape a hundred days of sorrow"','Chinese Proverb');
-insert into quotes (color,quote,author) values ('orange','"Holding on to anger is like grasping a hot coal with the intent of throwing it at someone else; you are the one who gets burned"','Buddha');
+insert into quotes (color,quote,author) values ('red','"You don’t have to be positive all the time. Its perfectly okay to feel sad, angry, annoyed ,frustrated, scared or anxious. Having feelings doesn’t make you a negative person. It makes you human"','Lori Deschene');
+insert into quotes (color,quote,author) values ('red','"Fear is the path to the dark side. Fear leads to anger. Anger leads to hate. Hate leads to suffering"','Yoda');
+insert into quotes (color,quote,author) values ('red','"When angry count to ten before you speak. If very angry, count to one hundred"','Thomas Jefferson');
+insert into quotes (color,quote,author) values ('red','"If you are patient in one moment of anger, you will escape a hundred days of sorrow"','Chinese Proverb');
+insert into quotes (color,quote,author) values ('red','"Holding on to anger is like grasping a hot coal with the intent of throwing it at someone else; you are the one who gets burned"','Buddha');
 insert into quotes (color,quote,author) values ('yellow','"Never be afraid to try something new, because life gets boring when you stay within the limits of what you already know"','Anonymous');
 insert into quotes (color,quote,author) values ('yellow','"Step into this experience with butterflies in your bones; with a nervous feeling so beautiful, you know you’re doing something right"','D .Antoinette Foy');
 insert into quotes (color,quote,author) values ('yellow','"Facebook is like the fridge. If you’re bored, you keep opening it"','Anonymous');
@@ -86,11 +86,11 @@ insert into quotes (color,quote,author) values ('black','"Failure will never ove
 insert into quotes (color,quote,author) values ('black','"It’s not the load that breaks you down, it’s the way you carry it"','Lena Horne');
 insert into quotes (color,quote,author) values ('black','"All great achievements require time"','Maya Angelou');
 insert into quotes (color,quote,author) values ('black','"Fall seven times, stand up eight"','Japanese proverb');
-insert into quotes (color,quote,author) values ('red','"Today you are you! That is truer than true! There is no one alive who is you-er than you"','Dr.Seuss');
-insert into quotes (color,quote,author) values ('red','"You never know how strong you are, until being strong is your only choice"','Bob Marley');
-insert into quotes (color,quote,author) values ('red','"It is not the mountain we conquer but ourselves"','Edmund Hillary');
-insert into quotes (color,quote,author) values ('red','"All great achievements require time"','Maya Angelou');
-insert into quotes (color,quote,author) values ('red','"When you think you have to figure out everything all at once. Breath. You’re Strong. You got this. Take it day by day"','Karen Salmansohn');
+insert into quotes (color,quote,author) values ('orange','"Today you are you! That is truer than true! There is no one alive who is you-er than you"','Dr.Seuss');
+insert into quotes (color,quote,author) values ('orange','"You never know how strong you are, until being strong is your only choice"','Bob Marley');
+insert into quotes (color,quote,author) values ('orange','"It is not the mountain we conquer but ourselves"','Edmund Hillary');
+insert into quotes (color,quote,author) values ('orange','"All great achievements require time"','Maya Angelou');
+insert into quotes (color,quote,author) values ('orange','"When you think you have to figure out everything all at once. Breath. You’re Strong. You got this. Take it day by day"','Karen Salmansohn');
 
 
 -- Movies table
