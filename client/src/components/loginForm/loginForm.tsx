@@ -27,7 +27,7 @@ export function LoginForm() {
         console.log(response, response.data, "login successful");
         return response.data;
       })
-      .then(navigate("https://mood-web-backend.vercel.app/home"))
+      .then(navigate("/home"))
       .catch((e) => {
         console.log(`Error `, e);
       });
