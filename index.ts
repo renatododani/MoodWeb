@@ -29,7 +29,6 @@ app.use("/", blackRoute);
 const port = 3050;
 
 export const db = pg()({
-<<<<<<< HEAD
   connectionString: process.env.DATABASE_URL,
   ssl: {
     rejectUnauthorized: false
@@ -39,20 +38,6 @@ export const db = pg()({
   password: 'ad3efaa72d7d4659ebc01bb1b00e5ce5765c7f53a37ae2b9b97c5b4dbcbcbd10',
   database: 'ddhn2rqd11ce6h',
 });
-=======
-  // connectionString: process.env.DATABASE_URL,
-  // ssl: {
-  //   rejectUnauthorized: false
-  // }
-  host: 'localhost',
-  port: 5432,
-  user: 'postgres',
-  password: process.env.DATABASE_PASSWORD,
-  database: process.env.DATABASE_NAME,
-  ssl: {
-    rejectUnauthorized: false,
-}});
->>>>>>> ec4debc225456a090e143853efc584f4a5978117
 
 app.listen(port, () =>
   console.log(

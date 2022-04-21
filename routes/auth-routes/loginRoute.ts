@@ -4,7 +4,7 @@ import { db } from '../..';
 
 export const loginRoute = express.Router();
 
-loginRoute.get('/login', (req:any, res:any) => {
+loginRoute.get('https://mood-web-backend.vercel.app/', (req:any, res:any) => {
 
     db.oneOrNone('SELECT id, email, password FROM users WHERE email = $(email);', {email: req.body.email})
     .then(user => {

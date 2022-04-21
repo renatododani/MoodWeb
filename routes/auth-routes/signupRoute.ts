@@ -6,7 +6,7 @@ const saltRounds = 10;
 
 export const signupRoutes = express.Router();
 
-signupRoutes.post('/signup', (req:any, res:any) => {
+signupRoutes.post('https://mood-web-backend.vercel.app/', (req:any, res:any) => {
 
     const hash = bcrypt.hashSync(req.body.password, saltRounds)
 
