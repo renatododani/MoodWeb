@@ -37,11 +37,7 @@ export function MoodHome() {
 
   return (
     <div className="moodHome">
-<<<<<<< HEAD
-      <h1 className="header">Hello, {user?.first_name}</h1>
-=======
       <h1 className="header">MoodWeb</h1>
->>>>>>> ec4debc225456a090e143853efc584f4a5978117
       <h2 className="discover">Discover Your Mood</h2>
 
       <section>
