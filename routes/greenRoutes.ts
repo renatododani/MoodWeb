@@ -3,7 +3,7 @@ import { db } from '../index'
 
 export const greenRoute = express.Router();
 
-greenRoute.get('https://mood-web-backend.vercel.app/', (req:any, res:any) => {
+greenRoute.get('/green-quotes', (req:any, res:any) => {
 
     db.oneOrNone("select * from quotes where color = 'green' order by RANDOM() limit 1;")
     .then(data => res.json(data))
