@@ -33,7 +33,7 @@ export function SignUpForm() {
         console.log(response, response.data);
         return response.data;
       })
-      .then(navigate("https://mood-web-backend.vercel.app/login"))
+      .then(navigate("/login"))
       .catch((e) => {
         console.log(`Error `, e);
       });
