@@ -63,7 +63,7 @@ a {
     transform: rotate(0deg);
   }
 }
-.bowl::before {
+/* .bowl::before {
   content: "";
   position: absolute;
   top: -15px;

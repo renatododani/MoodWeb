@@ -85,7 +85,8 @@ export function PurpleMood() {
         </div>  
       </div>
       <div className="musicPlayer">
-        <MusicPlayer></MusicPlayer>
+      <iframe src="https://open.spotify.com/embed/track/5YvcUK2eXJ2OllqDuEg18S?utm_source=generator&theme=0" width="100%" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+        {/* <MusicPlayer></MusicPlayer> */}
       </div>
     </div>
   );

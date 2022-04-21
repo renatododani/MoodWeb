@@ -1,6 +1,6 @@
 .moodBlack {
   background-color: rgba(3, 3, 3, 0.687);
-  height: 100vh;
+  height: 100%;
 }
 
 .black-header {
@@ -9,4 +9,9 @@
   text-align: center;
   padding-top: 20px;
   color: black;
+}
+
+iframe {
+  position: fixed;
+  bottom: 0;
 }

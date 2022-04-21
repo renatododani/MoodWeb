@@ -83,8 +83,10 @@ export function BlackMood() {
           <p>{movie[4]?.title} ({movie[4]?.release_year})</p>
         </div> 
       </div>
+      
       <div className="musicPlayer">
-        <MusicPlayer></MusicPlayer>
+      <iframe src="https://open.spotify.com/embed/track/3JOVTQ5h8HGFnDdp4VT3MP?utm_source=generator&theme=0" width="100%" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+        {/* <MusicPlayer></MusicPlayer> */}
       </div>
     </div>
   );

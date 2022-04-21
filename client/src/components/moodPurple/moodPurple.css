@@ -33,6 +33,7 @@
   max-width: 70%;
   position: relative;
   margin-top: 100px;
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.614);
 }
 blockquote{
   text-align: center;
@@ -56,6 +57,7 @@ blockquote{
   color: #336699;
   background-color: #ffcc00;
   line-height: 200px;
+  border-radius: 5%;
 }
 .right{
   position: absolute;
@@ -68,8 +70,10 @@ blockquote{
   color: #336699;
   background-color: #ffcc00;
   line-height: 200px;
+  border-radius: 5%;
 }
 small{
+  font-family: 'Orelega One', cursive;
   font-size: 1.7rem;
   color: #336699;
   position: relative;
@@ -79,4 +83,29 @@ small{
     content: "\2014 \0020";
     width: 5px;
   } */
+}
+
+.books-container {
+  font-family: 'Oswald', sans-serif;
+  margin-top: 50px;
+}
+
+.movies-container {
+  padding: 100px;
+}
+
+.book-img {
+  border-radius: 5%;
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.614);
+}
+
+.img-size {
+  border-radius: 5%;
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.614);
+  max-height: 240px;
+}
+
+
+.movie p {
+  margin-top: 5px;
 }
