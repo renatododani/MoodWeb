@@ -10,6 +10,6 @@ export interface User {
 }
 
 export function getUser() {
-    return axios.get<User|undefined>('https://mood-web-backend.vercel.app/')
+    return axios.get<User|undefined>('https://mood-web-backend.vercel.app/login')
     .then(response => response.data);
 }

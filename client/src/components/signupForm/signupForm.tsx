@@ -23,7 +23,7 @@ export function SignUpForm() {
 
   function userSignup() {
     return axios
-      .post(`/signup`, {
+      .post(`https://mood-web-backend.vercel.app/signup`, {
         first_name: firstName,
         last_name: lastName,
         email: email,
@@ -33,7 +33,7 @@ export function SignUpForm() {
         console.log(response, response.data);
         return response.data;
       })
-      .then(navigate("/login"))
+      .then(navigate("https://mood-web-backend.vercel.app/login"))
       .catch((e) => {
         console.log(`Error `, e);
       });
