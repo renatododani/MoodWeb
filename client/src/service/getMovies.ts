@@ -9,30 +9,30 @@ export interface Movie {
 }
 
 export function getPurpleMovies(){
-    return axios.get<Movie[]>('/purple-movies')
+    return axios.get<Movie[]>('https://mood-web-backend.vercel.app/')
     .then(response => response.data)
 }
 export function getRedMovies(){
-    return axios.get<Movie[]>('/red-movies')
+    return axios.get<Movie[]>('https://mood-web-backend.vercel.app/')
     .then(response => response.data)
 }
 export function getOrangeMovies(){
-    return axios.get<Movie[]>('/orange-movies')
+    return axios.get<Movie[]>('https://mood-web-backend.vercel.app/')
     .then(response => response.data)
 }
 export function getYellowMovies(){
-    return axios.get<Movie[]>('/yellow-movies')
+    return axios.get<Movie[]>('https://mood-web-backend.vercel.app/')
     .then(response => response.data)
 }
 export function getGreenMovies(){
-    return axios.get<Movie[]>('/green-movies')
+    return axios.get<Movie[]>('https://mood-web-backend.vercel.app/')
     .then(response => response.data)
 }
 export function getBlueMovies(){
-    return axios.get<Movie[]>('/blue-movies')
+    return axios.get<Movie[]>('https://mood-web-backend.vercel.app/')
     .then(response => response.data)
 }
 export function getBlackMovies(){
-    return axios.get<Movie[]>('/black-movies')
+    return axios.get<Movie[]>('https://mood-web-backend.vercel.app/')
     .then(response => response.data)
 }

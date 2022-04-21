@@ -1,19 +1,19 @@
 -- drop table users
-drop table books
+-- drop table books
 -- drop table quotes
 -- drop table movies
 
 
 -- Users Table
 
--- create table users(
--- 	id serial primary key,
--- 	first_name text not null,
--- 	last_name text not null,
--- 	email text unique not null,
--- 	password text not null,
--- 	join_date timestamp current_timestamp now
--- )
+create table users(
+	id serial primary key,
+	first_name text not null,
+	last_name text not null,
+	email text unique not null,
+	password text not null,
+	join_date timestamp default current_timestamp
+);
 
 -- Books Table
 create table books (

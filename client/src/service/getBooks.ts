@@ -10,30 +10,30 @@ export interface Book{
 }
 
 export function getPurpleBooks(){
-    return axios.get<Book[]>('/purple-books')
+    return axios.get<Book[]>('https://mood-web-backend.vercel.app/')
     .then(response => response.data)
 }
 export function getRedBooks(){
-    return axios.get<Book[]>('/red-books')
+    return axios.get<Book[]>('https://mood-web-backend.vercel.app/')
     .then(response => response.data)
 }
 export function getOrangeBooks(){
-    return axios.get<Book[]>('/orange-books')
+    return axios.get<Book[]>('https://mood-web-backend.vercel.app/')
     .then(response => response.data)
 }
 export function getYellowBooks(){
-    return axios.get<Book[]>('/yellow-books')
+    return axios.get<Book[]>('https://mood-web-backend.vercel.app/')
     .then(response => response.data)
 }
 export function getGreenBooks(){
-    return axios.get<Book[]>('/green-books')
+    return axios.get<Book[]>('https://mood-web-backend.vercel.app/')
     .then(response => response.data)
 }
 export function getBlueBooks(){
-    return axios.get<Book[]>('/blue-books')
+    return axios.get<Book[]>('https://mood-web-backend.vercel.app/')
     .then(response => response.data)
 }
 export function getBlackBooks(){
-    return axios.get<Book[]>('/black-books')
+    return axios.get<Book[]>('https://mood-web-backend.vercel.app/')
     .then(response => response.data)
 }
