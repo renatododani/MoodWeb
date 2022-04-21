@@ -10,14 +10,14 @@ blueRoute.get('https://mood-web-backend.vercel.app/', (req:any, res:any) => {
     .catch(error => console.log(error));
 });
 
-blueRoute.get('https://mood-web-backend.vercel.app/', (req:any, res:any) => {
+blueRoute.get('/blue-books', (req:any, res:any) => {
 
     db.manyOrNone("select * from books where color = 'blue' order by RANDOM();")
     .then(data => res.json(data))
     .catch(error => console.log(error));
 });
 
-blueRoute.get('https://mood-web-backend.vercel.app/', (req:any, res:any) => {
+blueRoute.get('/blue-movies', (req:any, res:any) => {
 
     db.manyOrNone("select * from movies where color = 'blue' order by RANDOM();")
     .then(data => res.json(data))
