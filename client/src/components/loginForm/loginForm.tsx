@@ -19,7 +19,7 @@ export function LoginForm() {
 
   function userLogin() {
     return axios
-      .post(`/login`, {
+      .post(`https://mood-web-backend.vercel.app/login`, {
         email: email,
         password: password,
       })
@@ -27,7 +27,7 @@ export function LoginForm() {
         console.log(response, response.data, "login successful");
         return response.data;
       })
-      .then(navigate("/home"))
+      .then(navigate("https://mood-web-backend.vercel.app/home"))
       .catch((e) => {
         console.log(`Error `, e);
       });
